@@ -1,0 +1,107 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex: 1;
+}
+
+main div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+main div model-viewer {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden; /* Necesario para evitar conflictos */
+}
+
+#main {
+    height: 100%;
+    overflow: hidden; /* Evita interferencia con scroll nativo */
+}
+
+[data-scroll-container] {
+    overflow: hidden;
+}
+
+
+html,
+body {
+    height: 100%;
+    min-height: 100vh;
+    width: 100%;
+    background-color: red;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+section {
+    height: 100vh;
+    width: 100%;
+    padding: 4rem;
+}
+
+/* IMPORTANTE! */
+span {
+    display: inline-block;
+}
+
+#page1 {
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#page2 {
+    background-color: skyblue;
+    display: flex;
+    flex-direction: column;
+}
+
+#page3 {
+    background-color: limegreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-flex {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.lerp-span {
+    font-size: 3rem;
+    text-align: center;
+}
