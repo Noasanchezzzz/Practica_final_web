@@ -24,8 +24,18 @@
 
 
 html, body {
-    height: 100%;
-    margin: 0;
+    margin: 0; /* Elimina márgenes y rellenos */
+    padding: 0;
+    height: 100%; /* Altura del 100% del viewport */
+}
+
+#main-background {
+    width: 100%; /* El ancho completo */
+    height: auto; /* Ajusta la altura proporcionalmente al ancho */
+    background-color:aqua; /* Ruta de la imagen */
+    background-size: contain; /* Asegúrate de mostrar toda la imagen */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que se repita */
 }
 
 [data-scroll-container] {
