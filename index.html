@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Locomotive Scroll</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.css" />
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        [data-scroll-container] {
+            height: 100%;
+            overflow: hidden;
+        }
+        [data-scroll-section] {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lightblue;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div data-scroll-container>
+        <section data-scroll-section>
+            <h1>Section 1</h1>
+        </section>
+        <section data-scroll-section>
+            <h1>Section 2</h1>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const scroll = new LocomotiveScroll({
+                el: document.querySelector('[data-scroll-container]'),
+                smooth: true
+            });
+        });
+    </script>
+</body>
+</html>
