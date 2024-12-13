@@ -16,3 +16,19 @@
 //     });
 // });
 
+
+    document.addEventListener('DOMContentLoaded', () => {
+        try {
+            // Inicializa Locomotive Scroll
+            const scroll = new LocomotiveScroll({
+                el: document.querySelector('[data-scroll-container]'),
+                smooth: true,  // Desplazamiento suave
+                direction: 'vertical', // Asegúrate de que sea vertical si ese es tu diseño
+            });
+
+            console.log("Locomotive Scroll inicializado correctamente.");
+        } catch (error) {
+            console.error("Error al inicializar Locomotive Scroll:", error);
+        }
+    });
+
