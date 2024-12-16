@@ -1,54 +1,91 @@
-/* body {
-    font-family: 'Courier New', Courier, monospace;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-} */
-/* h1 {
-  position: absolute;
-  font-size: 20px;
-  top: 40vh;
-  right: 20vh;
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumar+One&display=swap');
+
+
+
+/* GRUPO DE LOS COLORES, SI PONES VAR(), ELIGES LA OPCIÓN DE ESTOS COLORES QUE YA ESTAN NOMBRADOS,IMPORTANTEEEEEE */
+:root {
+  --clr-black: #000000;
+  --clr-white: #ffffff;
+  --clr-primary: #ed6a42;
+  --clr-secondary: #0004ff;
+  --background:  rgb(255, 255, 255);
+  --ff-title: "Kumar One", serif;
+  --ff-body: "inconsolata";
+  --ff-opacity: rgba(0, 0, 0, 0.5);
 }
-
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    transition: all;
-    font-family: Arial, Helvetica, sans-serif;
-} */
-
 
 html, body {
     margin: 0; /* Elimina márgenes y rellenos */
     padding: 0;
-    height: 100%; /* Altura del 100% del viewport */
 }
 
-#main-background {
-    width: 100%; /* El ancho completo */
-    height: auto; /* Ajusta la altura proporcionalmente al ancho */
-    background-color:aqua; /* Ruta de la imagen */
-    background-size: contain; /* Asegúrate de mostrar toda la imagen */
+/* .c-direction-block {
+    height: 300vh;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+
+.c-direction-block_item {
+    font-size: 10vw;
+    font-weight: 600;
+    line-height: 1;
+    position: absolute;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.c-direction-block_item.-one {
+    top: 33%;
+    transform: translateX(-50vw) rotate(26deg);
+}
+
+.c-direction-block_item.-two {
+    top: 45%;
+}
+
+.c-direction-block_item.-three {
+    top: 55%;
+    transform: rotate(9deg);
+}
+
+.c-direction-block_item.-four {
+    top: 68%;
+    transform: translateX(-50vw) rotate(-19deg);
+}
+
+.c-direction-block_item.-five {
+    top: 63%;
+    transform: translateX(-10vw) rotate(3deg);
+}
+
+.c-direction-block_item span {
+    background-color: #fff;
+    display: block;
+    padding: 0 20px;
+    white-space: nowrap;
+} */
+
+#estaanocheciendo {
+    font-family: var(--ff-title);
+    position: absolute;
+    right: 20vh;
+    top: 10vh; /* Ajustamos su alineación superior */
+  }
+  #background-section {
+    background-image: url('img/amanecer.jpg'); /* Cambia 'your-image-url.jpg' por la ruta de tu imagen */
+    background-size: cover; /* Hace que la imagen se adapte al ancho */
     background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que se repita */
-}
-
-[data-scroll-container] {
-    height: 100%;
-    overflow: hidden; /* Asegúrate de ocultar el overflow */
-}
-
-[data-scroll-section] {
-    min-height: 100vh; /* Cada sección ocupa toda la ventana */
-    position: relative; /* Requerido para Locomotive Scroll */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    width: 100%; /* Ocupa todo el ancho */
+    position: relative;
+  }
+  #teequivocaste {
+    font-family: var(--ff-title);
+    position: absolute;
+    right: 20vh;
+    top: calc(100vh + 20px); /* Alineado después del section 'nopasar' */
+  }
 
   
