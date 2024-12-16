@@ -14,11 +14,13 @@
   --ff-opacity: rgba(0, 0, 0, 0.5);
 }
 
-html, body {
-    margin: 0; /* Elimina márgenes y rellenos */
+body, html {
+    margin: 0;
     padding: 0;
-}
-
+    height: 100%; /* Asegura que el 100vh se comporte correctamente */
+    background-color: #04172c;
+  }
+  
 /* .c-direction-block {
     height: 300vh;
     left: 0;
@@ -72,11 +74,11 @@ html, body {
     position: absolute;
     right: 20vh;
     top: 10vh; /* Ajustamos su alineación superior */
+    height: 100vh;
   }
   #background-section {
-    background-image: url('img/amanecer.jpg'); /* Cambia 'your-image-url.jpg' por la ruta de tu imagen */
+    background-image: url('../img/amanecer.jpg'); /* Cambia 'your-image-url.jpg' por la ruta de tu imagen */
     background-size: cover; /* Hace que la imagen se adapte al ancho */
-    background-position: center; /* Centra la imagen */
     height: 100vh; /* Ocupa toda la altura de la ventana */
     width: 100%; /* Ocupa todo el ancho */
     position: relative;
@@ -87,5 +89,40 @@ html, body {
     right: 20vh;
     top: calc(100vh + 20px); /* Alineado después del section 'nopasar' */
   }
+  #arboles {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: row;
+    margin-top: 0px;
+    margin-left: 60px ;
+    margin-right: 60px ;
+  }
+  
+  .arboles1 {
+    position: relative; /* Contenedor relativo para permitir la superposición */
+    width: 500px; /* Ancho del grupo (ajústalo según tus necesidades) */
+    height: 850px; /* Altura del grupo (ajústalo según el tamaño de las imágenes) */
+  }
+  
+  .arboles1 img {
+    position: absolute; /* Permite superponer las imágenes */
+    left: 0; /* Posición horizontal base */
+    bottom: 0; /* Las imágenes empiezan desde abajo */
+    width: 100%; /* Ajusta el tamaño al contenedor */
+    transform: translateX(var(--offset, 0%)); /* Desplazamiento opcional */
+  }
+  
+  /* Opcional: Ajustar superposición específica */
+  .arboles1 img:nth-child(1) {
+    --offset: 20px; /* Desplaza ligeramente la primera imagen */
+    z-index: 1; /* Control de superposición */
+  }
+  
+  .arboles1 img:nth-child(2) {
+    --offset: -40px; /* Desplaza ligeramente la segunda imagen */
+    z-index: 2;
+  }
+  
 
   
