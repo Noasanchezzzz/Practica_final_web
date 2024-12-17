@@ -91,12 +91,13 @@ body, html {
   }
   #arboles {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-end;
     flex-direction: row;
     margin-top: 0px;
-    margin-left: 60px ;
-    margin-right: 60px ;
+    margin-left: 60px;
+    margin-right: 60px;
+    gap: 100px;
   }
   
   .arboles1 {
@@ -120,8 +121,16 @@ body, html {
   }
   
   .arboles1 img:nth-child(2) {
-    --offset: -40px; /* Desplaza ligeramente la segunda imagen */
+    --offset: 60px; /* Desplaza ligeramente la segunda imagen */
     z-index: 2;
+  }
+  .arboles1 img:nth-child(3) {
+    --offset: -120px; /* Desplaza ligeramente la segunda imagen */
+    z-index: 3;
+  }
+  .arboles1 img:nth-child(4) {
+    --offset: 60px; /* Desplaza ligeramente la segunda imagen */
+    z-index: 4;
   }
   
 
