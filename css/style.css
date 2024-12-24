@@ -73,13 +73,13 @@ body, html {
     font-family: var(--ff-title);
     position: absolute;
     right: 20vh;
-    top: 10vh; /* Ajustamos su alineación superior */
+    top: 40vh; /* Ajustamos su alineación superior */
     height: 100vh;
   }
   #background-section {
     background-image: url('../img/amanecer.jpg'); /* Cambia 'your-image-url.jpg' por la ruta de tu imagen */
     background-size: cover; /* Hace que la imagen se adapte al ancho */
-    height: 100vh; /* Ocupa toda la altura de la ventana */
+    height: 600vh; /* Ocupa toda la altura de la ventana */
     width: 100%; /* Ocupa todo el ancho */
     position: relative;
   }
@@ -116,7 +116,7 @@ body, html {
   
   /* Opcional: Ajustar superposición específica */
   .arboles1 img:nth-child(1) {
-    --offset: 20px; /* Desplaza ligeramente la primera imagen */
+    --offset: 110px; /* Desplaza ligeramente la primera imagen */
     z-index: 1; /* Control de superposición */
   }
   
@@ -132,6 +132,5 @@ body, html {
     --offset: 60px; /* Desplaza ligeramente la segunda imagen */
     z-index: 4;
   }
-  
 
   
