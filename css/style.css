@@ -6,131 +6,230 @@
 :root {
   --clr-black: #000000;
   --clr-white: #ffffff;
-  --clr-primary: #ed6a42;
-  --clr-secondary: #0004ff;
-  --background:  rgb(255, 255, 255);
+  --clr-primary: #fff700;
+  --clr-secondary: #ffffff8b;
+  --background:  #03172f;
   --ff-title: "Kumar One", serif;
   --ff-body: "inconsolata";
   --ff-opacity: rgba(0, 0, 0, 0.5);
 }
 
 body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%; /* Asegura que el 100vh se comporte correctamente */
-    background-color: #04172c;
-  }
-  
-/* .c-direction-block {
-    height: 300vh;
-    left: 0;
-    position: absolute;
-    right: 0;
-    z-index: 1;
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Asegura que el 100vh se comporte correctamente */
+  background-color: var(--background);
+  overflow: hidden; /* Cambia a visible si está configurado */
+    position: relative; /* Asegúrate de que no hay conflictos con 'fixed' */
+}
+
+/* FOTO FONDO */
+#background-section {
+  background-image: url('../img/amanecer.jpg'); /* Cambia 'your-image-url.jpg' por la ruta de tu imagen */
+  background-size: cover; /* Hace que la imagen se adapte al ancho */
+  height: 600vh; /* Ocupa toda la altura de la ventana */
+  width: 100%; /* Ocupa todo el ancho */
+  position: relative;
+}
+
+/* PRIMER TITULO */
+#estaanocheciendo {
+  font-family: var(--ff-title);
+  color: var(--clr-secondary);
+  position: absolute;
+  right: 20vh;
+  top: 40vh; /* Ajustamos su alineación superior */
+  height: 100vh;
+}
+
+/* ARBOLES */
+#arboles {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row;
+  margin-top: 0px;
+  gap: 100px;
+  overflow: hidden; /* Asegura que las imágenes fuera del área visible no sean vistas */
+  margin-bottom: 10px;
+}
+
+/* Cada contenedor de árboles */
+.arboles1 {
+  position: relative;
+  width: 1000px; /* Ajusta el ancho del grupo de árboles */
+  height: 850px;
+  overflow: hidden;
+  white-space: nowrap; /* Para que las imágenes no se ajusten en múltiples líneas */
+}
+
+/* Estilo de las imágenes de los árboles */
+.arboles1 img {
+  position: absolute;
+  width: 100%;
+  transition: transform 1s ease-out; /* Asegura que el movimiento sea suave */
+  will-change: transform; /* Mejor rendimiento durante el desplazamiento */
+}
+
+
+
+
+
+/* LOCOMOTIVE */
+[data-scroll-container] {
+  overflow: visible; /* Cambia a visible si necesitas ajustes */
+  position: relative;
+  height: auto; /* Asegúrate de que la altura sea dinámica */
 }
 
 .c-direction-block_item {
-    font-size: 10vw;
-    font-weight: 600;
-    line-height: 1;
-    position: absolute;
-    text-transform: uppercase;
-    white-space: nowrap;
+  width: 100vw; /* Ocupa todo el ancho de la pantalla */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.c-direction-block_item.-one {
-    top: 33%;
-    transform: translateX(-50vw) rotate(26deg);
+.c-direction-block_item_inner {
+  white-space: nowrap; /* Asegura que el texto no se divida en líneas */
+  font-size: 10vw;
+  font-weight: bold;
+  color: var(--clr-black);
+}
+
+.c-direction-block {
+  height: 300vh;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: 1;
 }
 
 .c-direction-block_item.-two {
-    top: 45%;
+  top: 45%;
 }
 
 .c-direction-block_item.-three {
-    top: 55%;
-    transform: rotate(9deg);
+  top: 50%;
+  transform: rotate(9deg);
 }
 
 .c-direction-block_item.-four {
-    top: 68%;
-    transform: translateX(-50vw) rotate(-19deg);
+  top: 70%;
+  transform: translateX(10vw) rotate(-19deg);
 }
 
 .c-direction-block_item.-five {
-    top: 63%;
-    transform: translateX(-10vw) rotate(3deg);
+  top: 63%;
+  transform: translateX(50vh) rotate(3deg);
 }
 
 .c-direction-block_item span {
-    background-color: #fff;
-    display: block;
-    padding: 0 20px;
-    white-space: nowrap;
-} */
+  background-color:var(--clr-primary);
+  display: block;
+  padding: 5px 20px;
+  white-space: nowrap;
+}
 
-#estaanocheciendo {
-    font-family: var(--ff-title);
-    position: absolute;
-    right: 20vh;
-    top: 40vh; /* Ajustamos su alineación superior */
-    height: 100vh;
-  }
-  #background-section {
-    background-image: url('../img/amanecer.jpg'); /* Cambia 'your-image-url.jpg' por la ruta de tu imagen */
-    background-size: cover; /* Hace que la imagen se adapte al ancho */
-    height: 600vh; /* Ocupa toda la altura de la ventana */
-    width: 100%; /* Ocupa todo el ancho */
-    position: relative;
-  }
-  #teequivocaste {
-    font-family: var(--ff-title);
-    position: absolute;
-    right: 20vh;
-    top: calc(100vh + 20px); /* Alineado después del section 'nopasar' */
-  }
-  #arboles {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    flex-direction: row;
-    margin-top: 0px;
-    margin-left: 60px;
-    margin-right: 60px;
-    gap: 100px;
-  }
-  
-  .arboles1 {
-    position: relative; /* Contenedor relativo para permitir la superposición */
-    width: 500px; /* Ancho del grupo (ajústalo según tus necesidades) */
-    height: 850px; /* Altura del grupo (ajústalo según el tamaño de las imágenes) */
-  }
-  
-  .arboles1 img {
-    position: absolute; /* Permite superponer las imágenes */
-    left: 0; /* Posición horizontal base */
-    bottom: 0; /* Las imágenes empiezan desde abajo */
-    width: 100%; /* Ajusta el tamaño al contenedor */
-    transform: translateX(var(--offset, 0%)); /* Desplazamiento opcional */
-  }
-  
-  /* Opcional: Ajustar superposición específica */
-  .arboles1 img:nth-child(1) {
-    --offset: 110px; /* Desplaza ligeramente la primera imagen */
-    z-index: 1; /* Control de superposición */
-  }
-  
-  .arboles1 img:nth-child(2) {
-    --offset: 60px; /* Desplaza ligeramente la segunda imagen */
-    z-index: 2;
-  }
-  .arboles1 img:nth-child(3) {
-    --offset: -120px; /* Desplaza ligeramente la segunda imagen */
-    z-index: 3;
-  }
-  .arboles1 img:nth-child(4) {
-    --offset: 60px; /* Desplaza ligeramente la segunda imagen */
-    z-index: 4;
-  }
+/* SEGUNDO TITULO */
+#teequivocaste {
+  font-family: var(--ff-title);
+  color:var(--clr-secondary);
+  margin-top: 20%;
+  height: 40vh;
+  margin-left: 47%;
+}
 
-  
+#huellas {
+  gap: 30px;
+  position: relative;
+  height: 140vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; /* Ocultar las huellas que salen del viewport */
+}
+
+.huella-container {
+  display: flex;
+  justify-content: center;
+  opacity: 0; /* Inicia como invisible */
+  transform: translateY(50px); /* Posición inicial fuera de pantalla */
+  transition: opacity 0.5s ease, transform 0.1s ease; /* Animación suave */
+}
+
+.huella-container.is-visible {
+  opacity: 1; /* Visible cuando está dentro del viewport */
+  transform: translateY(0); /* Sin desplazamiento vertical */
+}
+
+.huella {
+  width: 120px; /* Tamaño de las huellas */
+}
+
+.huella1 {
+  width: 120px; /* Tamaño de las huellas */
+  transform: translateX(80px) rotate(344deg); /* Zigzag a la derecha */
+}
+.huella2{
+  width: 120px; /* Tamaño de las huellas */
+  transform: translateX(160px) rotate(352deg); /* Zigzag a la izquierda */
+}
+.huella3{
+  width: 120px; /* Tamaño de las huellas */
+  transform: translateX(160px) rotate(12deg); /* Zigzag a la izquierda */
+}
+.huella4{
+  width: 120px; /* Tamaño de las huellas */
+  transform: translateX(120px) rotate(34deg); /* Zigzag a la izquierda */
+}
+.huella5{
+  width: 120px; /* Tamaño de las huellas */
+  transform: translateX(50px) rotate(35deg); /* Zigzag a la izquierda */
+}
+.huella6{
+  width: 120px; /* Tamaño de las huellas */
+  transform: translateX(0px) rotate(16deg); /* Zigzag a la izquierda */
+}
+
+
+/* Estilo para el área de arrastre */
+#linterna{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px
+}
+#draggable {
+  width: 300px;
+  height: 121px;
+  float: left;
+  cursor: pointer;
+  background-image: url(../img/LINTERNA.png);
+  background-size: cover;
+  background-position: center;
+  display:flex !important;
+}
+
+/* Estilo para el área de drop */
+#droppable {
+  width: 600px;
+  height: 600px;
+  padding: 0.5em;
+  float: left;
+  margin: 10px;
+  background-color: black; /* Fondo negro */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Imagen que aparece en el drop */
+#droppedImage {
+  display: none; /* Inicialmente oculta */
+  width: 600px;
+  height: 600px;
+  background-image: url(../img/escenalinterna.png); /* Cambia esta ruta por la imagen que quieres mostrar */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
