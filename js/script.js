@@ -1,13 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     const scroll = new LocomotiveScroll({
-        el: document.querySelector("[data-scroll-container]"),  // Contenedor principal
+        el: document.querySelector("[data-scroll-container]"), // Contenedor principal
         smooth: true,
         multiplier: 1,
         class: 'is-revealed',
     });
-});
 
-$(function() {
     // Hacer que el elemento con id "draggable" sea arrastrable
     $("#draggable").draggable();
 
@@ -16,11 +14,29 @@ $(function() {
         drop: function(event, ui) {
             $(this).addClass("ui-state-highlight").find("p").html("");
 
-            // Hacer que la imagen se muestre poco a poco
-            $("#droppedImage").fadeIn(2000); // 2 segundos para hacerla visible
+            // Mostrar la imagen de fondo
+            $("#droppedImage").fadeIn(2000);
 
-            // Hacer que la linterna desaparezca
-            $("#draggable").fadeOut(2000); // 1 segundo para ocultar la linterna
+            // Establecer las posiciones del libro y la camiseta
+            const bookPosition = { top: "450px", left: "135px" };
+            const tshirtPosition = { top: "373px", left: "260px" };
+
+            $("#book").css(bookPosition).fadeIn(2000);
+            $("#tshirt").css(tshirtPosition).fadeIn(2000);
+
+            // Ocultar la linterna
+            $("#draggable").fadeOut(2000);
         }
     });
+
+    // Redirección al hacer clic en el libro
+    $("#book").on("click", () => {
+        window.location.href = "https://www.cargo.com"; // Cambia este enlace al deseado
+    });
+
+    // Redirección al hacer clic en la camiseta
+    $("#tshirt").on("click", () => {
+        window.location.href = "indexcamiseta1.html"; // Cambia al nombre de tu nuevo archivo HTML
+    });
 });
+

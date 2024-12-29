@@ -207,29 +207,53 @@ body, html {
   background-size: cover;
   background-position: center;
   display:flex !important;
+  color: var(--clr-primary);
 }
 
 /* Estilo para el área de drop */
 #droppable {
   width: 600px;
   height: 600px;
-  padding: 0.5em;
   float: left;
-  margin: 10px;
   background-color: black; /* Fondo negro */
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--clr-primary);
 }
 
-/* Imagen que aparece en el drop */
+/* Imagen contenedor */
 #droppedImage {
   display: none; /* Inicialmente oculta */
   width: 600px;
   height: 600px;
-  background-image: url(../img/escenalinterna.png); /* Cambia esta ruta por la imagen que quieres mostrar */
+  background-image: url(../img/escenalinterna.png);
   background-size: cover;
   background-position: center;
   position: relative;
+}
+
+/* Estilo para el libro */
+#book {
+  position: absolute;
+  width: 268px; /* Ajusta el tamaño del libro */
+}
+
+/* Estilo para la camiseta */
+#tshirt {
+  position: absolute;
+  width: 330px; /* Ajusta el tamaño de la camiseta */
+}
+
+/* Hover Zoom In para libro */
+#book:hover {
+  transform: scale(1.05); /* Aumenta el tamaño al 120% */
+  transition: transform 0.3s ease-in-out; /* Transición suave */
+}
+
+/* Hover Zoom In para camiseta */
+#tshirt:hover {
+  transform: scale(1.05); /* Aumenta el tamaño al 120% */
+  transition: transform 0.3s ease-in-out; /* Transición suave */
 }

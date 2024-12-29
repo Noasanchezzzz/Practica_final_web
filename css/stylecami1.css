@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumar+One&display=swap');
+
+
+
+/* GRUPO DE LOS COLORES, SI PONES VAR(), ELIGES LA OPCIÓN DE ESTOS COLORES QUE YA ESTAN NOMBRADOS,IMPORTANTEEEEEE */
+:root {
+  --clr-black: #000000;
+  --clr-white: #ffffff;
+  --clr-primary: #fff700;
+  --clr-secondary: #ffffff8b;
+  --background:  #03172f;
+  --ff-title: "Kumar One", serif;
+  --ff-body: "inconsolata";
+  --ff-opacity: rgba(0, 0, 0, 0.5);
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: var(--background);
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    justify-content: space-evenly;
+}
+  
+.size-selection .btn-group .btn.selected {
+    --clr-primary: #ed6a42;
+    color: white;
+}
+  
+/* Información del producto */
+.product-info {
+    max-width: 400px;
+    font-family:var(--ff-body);
+}
+  
+  
+/* BOTÓN */
+.btn-custom {
+    background-color: var(--clr-primary); /* Naranja */
+    color: var(--clr-white);
+    border: none; /* Elimina el borde */
+    padding: 10px 20px; /* Espaciado dentro del botón */
+    font-size: 16px;
+    border-radius: 0 !important;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+    
+.btn-custom:hover {
+    background-color: var(--clr-secondary);
+    transform: scale(1.05); 
+    color: var(--clr-white);
+}
+    
+/* Add a transparency effect for thumnbail images */
+.demo {
+    opacity: 0.6;
+}
+    
+.active,
+.demo:hover {
+    opacity: 1;
+}
+
+.product-detail-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px;
+    gap: 80px;
+    color: var(--clr-secondary);
+}
+
+.info-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.model-column {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.product-info h2 {
+    color: var(--clr-primary);
+    font-family: var(--ff-title);
+}
+
+.btn-custom {
+    background-color: var(--clr-primary);
+    color: var(--clr-white);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 0 !important;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-custom:hover {
+    background-color: var(--clr-secondary);
+    transform: scale(1.05);
+    color: var(--clr-white);
+}
+
+model-viewer {
+    width: 100%;
+    height: auto;
+    min-height: 400px; /* Asegura una altura mínima */
+}
+.text-muted{
+    color: var(--clr-white) !important;
+}
