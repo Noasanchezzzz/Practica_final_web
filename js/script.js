@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
             $("#droppedImage").fadeIn(2000);
 
             // Establecer las posiciones del libro y la camiseta
-            const bookPosition = { top: "450px", left: "135px" };
-            const tshirtPosition = { top: "373px", left: "260px" };
+            const bookPosition = { top: "440px", left: "410px" };
+            const tshirtPosition = { top: "400px", left: "100px" };
 
             $("#book").css(bookPosition).fadeIn(2000);
             $("#tshirt").css(tshirtPosition).fadeIn(2000);
@@ -32,11 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Redirección al hacer clic en el libro
     $("#book").on("click", () => {
         window.location.href = "https://www.cargo.com"; // Cambia este enlace al deseado
-    });
-
-    // Redirección al hacer clic en la camiseta
-    $("#tshirt").on("click", () => {
-        window.location.href = "indexcamiseta1.html"; // Cambia al nombre de tu nuevo archivo HTML
     });
 });
 

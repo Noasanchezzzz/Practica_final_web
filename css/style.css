@@ -14,22 +14,23 @@
   --ff-opacity: rgba(0, 0, 0, 0.5);
 }
 
-body, html {
+body,html {
   margin: 0;
   padding: 0;
-  height: 100%; /* Asegura que el 100vh se comporte correctamente */
-  background-color: var(--background);
-  overflow: hidden; /* Cambia a visible si está configurado */
-    position: relative; /* Asegúrate de que no hay conflictos con 'fixed' */
+  height: 100vh;
+  background-color: var(--background); /* Color de fondo */
+  overflow: auto; /* Esto permite hacer scroll */
 }
 
 /* FOTO FONDO */
 #background-section {
-  background-image: url('../img/amanecer.jpg'); /* Cambia 'your-image-url.jpg' por la ruta de tu imagen */
-  background-size: cover; /* Hace que la imagen se adapte al ancho */
-  height: 600vh; /* Ocupa toda la altura de la ventana */
-  width: 100%; /* Ocupa todo el ancho */
+  background-image: url('../img/amanecer.jpg');
+  background-size: cover;
+  background-color: var(--background);
+  min-height: 100vh; /* Ajusta la altura mínima para evitar corte */
+  width: 100%;
   position: relative;
+  margin-bottom: 50px; /* Ajusta el margen para que el contenido siguiente sea visible */
 }
 
 /* PRIMER TITULO */
@@ -51,15 +52,17 @@ body, html {
   gap: 100px;
   overflow: hidden; /* Asegura que las imágenes fuera del área visible no sean vistas */
   margin-bottom: 10px;
+  z-index: 100;
+  position: relative;
 }
 
 /* Cada contenedor de árboles */
 .arboles1 {
   position: relative;
-  width: 1000px; /* Ajusta el ancho del grupo de árboles */
-  height: 850px;
-  overflow: hidden;
+  width: 200vh; /* Ajusta el ancho del grupo de árboles */
+  height: 130vh;
   white-space: nowrap; /* Para que las imágenes no se ajusten en múltiples líneas */
+  
 }
 
 /* Estilo de las imágenes de los árboles */
@@ -228,7 +231,7 @@ body, html {
   display: none; /* Inicialmente oculta */
   width: 600px;
   height: 600px;
-  background-image: url(../img/escenalinterna.png);
+  background-image: url(../img/ESCENA_CRIMEN.png);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -237,13 +240,13 @@ body, html {
 /* Estilo para el libro */
 #book {
   position: absolute;
-  width: 268px; /* Ajusta el tamaño del libro */
+  width: 80px; /* Ajusta el tamaño del libro */
 }
 
 /* Estilo para la camiseta */
 #tshirt {
   position: absolute;
-  width: 330px; /* Ajusta el tamaño de la camiseta */
+  width: 90px; /* Ajusta el tamaño de la camiseta */
 }
 
 /* Hover Zoom In para libro */
@@ -256,4 +259,86 @@ body, html {
 #tshirt:hover {
   transform: scale(1.05); /* Aumenta el tamaño al 120% */
   transition: transform 0.3s ease-in-out; /* Transición suave */
+}
+
+/* Información del producto */
+.product-info {
+  max-width: 400px;
+  font-family: var(--ff-body);
+}
+
+.product-info h2 {
+  font-family: Inconsolata;
+  color: var(--clr-primary);
+}
+
+/* Visor 3D */
+#modelViewerContainer > model-viewer {
+  width: 100%;
+  height: 400px;
+}
+
+/* Estilos del botón */
+.btn-custom {
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 0 !important;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-custom:hover {
+  background-color: var(--clr-secondary);
+  transform: scale(1.05);
+  color: var(--clr-white);
+}
+
+/* Diseño principal */
+.product-detail-section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 30px;
+}
+
+/* Columnas para el modelo 3D y la info */
+.col-md-6 {
+  flex: 0 0 auto;
+  width: 50%;
+}
+
+/* Asegurarse de que el modelo no se desborde */
+#modelViewerContainer {
+  width: 100%;
+  height: 400px; /* Asegúrate de ajustar la altura si es necesario */
+}
+
+/* Estilo para el tamaño de la imagen */
+#tshirt {
+  cursor: pointer;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 767px) {
+  .col-md-6 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  #modelViewerContainer > model-viewer {
+    height: 300px; /* Ajustar el tamaño del modelo 3D en pantallas pequeñas */
+  }
+}
+
+/* Para dispositivos más grandes, por ejemplo, tabletas y móviles grandes */
+@media (min-width: 768px) {
+  .col-md-6 {
+    width: 50%;
+  }
+
+  #modelViewerContainer > model-viewer {
+    height: 400px;
+  }
 }

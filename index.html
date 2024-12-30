@@ -6,6 +6,8 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>Inicio BES.S</title>
         <link rel="stylesheet" href="https://use.typekit.net/qhm8wqj.css" />
+        <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- CUSTOM css -->
         <link rel="stylesheet" href="css/style.css" />
         <!-- FONTAWESOME -->
@@ -122,19 +124,66 @@
                         <p>NO VEO NADA</p>
                         <!-- Imagen que aparecerá poco a poco -->
                         <div id="droppedImage">
-                            <img src="img/librolinterna.png" alt="libro" id="book">
-                            <img src="img/camisetalinterna.png" alt="camiseta" id="tshirt">
+                            <img src="img/nota.png" alt="nota" id="book">
+                            <img src="img/camiseta.png" alt="camiseta" id="tshirt" data-bs-toggle="modal" data-bs-target="#productModal">
                         </div>
                     </div>
                     
                 </section>
-                <main>
-                    <div>
-                        <model-viewer src="assets\models\tshirt1.glb"shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-                    </div>  
-                </main>
             </section>    
         </div>
+        <!-- Modal de Producto -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="productModalLabel">Camiseta Akuarel</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid product-detail-section">
+            <div class="row">
+              <!-- Columna del carrusel de imágenes -->
+              <!-- Columna para el modelo 3D -->
+            <div class="col-md-6">
+                <div id="modelViewerContainer">
+                  <!-- Aquí iría tu visor 3D -->
+                  <model-viewer src="assets\models\tshirt1.glb" alt="Modelo 3D" auto-rotate camera-controls></model-viewer>
+                </div>
+              </div>
+  
+              <!-- Columna de información del producto -->
+              <div class="col-md-6">
+                <div class="product-info">
+                  <h2>Camiseta Akuarel</h2>
+                  <p class="text-muted">Referencia: Blanco 5644/303</p>
+                  <p>Camiseta relaxed-fit. Cuello redondo, manga corta.
+                    Estampaciones combinadas a contraste en delantero y espalda.</p>
+                  <h4>25,99€</h4>
+                  <div class="size-selection">
+                    <label for="size" class="form-label">Selecciona tu talla:</label>
+                    <div class="btn-group" role="group" aria-label="Size Selection">
+                      <button type="button" class="btn btn-outline-secondary" data-size="XS">XS</button>
+                      <button type="button" class="btn btn-outline-secondary" data-size="S">S</button>
+                      <button type="button" class="btn btn-outline-secondary" data-size="M">M</button>
+                      <button type="button" class="btn btn-outline-secondary" data-size="L">L</button>
+                      <button type="button" class="btn btn-outline-secondary" data-size="XL">XL</button>
+                    </div>
+                  </div>
+                  <button class="btn btn-custom mt-3">Añadir al carrito</button>
+                  <div class="mt-4">
+                    <h5>Reseñas</h5>
+                    <p><strong>★★★★☆</strong> 4.5 de 5 estrellas (100 reseñas)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
         
     <footer>
     </footer>
@@ -146,6 +195,9 @@
         <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
         <!-- LOCOMOTIVE -->
         <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+        <!-- Bootstrap Bundle JS (incluye Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
 
         <!-- MI JS -->
         <script src="js/script.js"></script>
