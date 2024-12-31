@@ -144,7 +144,7 @@ body,html {
 #huellas {
   gap: 30px;
   position: relative;
-  height: 140vh;
+  height: 150vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -262,8 +262,17 @@ body,html {
 }
 
 /* Información del producto */
+.modal-content{
+  background-color: var(--background);
+}
+.modal-body{
+  color: var(--clr-white);
+}
+.text-muted {
+  color: var(--clr-secondary) !important;
+}
 .product-info {
-  max-width: 400px;
+  max-width: 600px;
   font-family: var(--ff-body);
 }
 
@@ -298,8 +307,7 @@ body,html {
 /* Diseño principal */
 .product-detail-section {
   display: flex;
-  flex-wrap: wrap;
-  padding: 20px;
+  justify-content: space-around;
   gap: 30px;
 }
 
@@ -320,15 +328,20 @@ body,html {
   cursor: pointer;
 }
 
+@media (min-width: 700px) {
+.arboles1 img {
+  width: 90%;
+}
+}
 /* Responsividad para pantallas pequeñas */
 @media (max-width: 767px) {
   .col-md-6 {
     width: 100%;
-    margin-bottom: 20px;
+    padding: 0;
   }
 
   #modelViewerContainer > model-viewer {
-    height: 300px; /* Ajustar el tamaño del modelo 3D en pantallas pequeñas */
+    height: 400px; /* Ajustar el tamaño del modelo 3D en pantallas pequeñas */
   }
 }
 
