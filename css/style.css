@@ -38,7 +38,7 @@ body,html {
   font-family: var(--ff-title);
   color: var(--clr-secondary);
   position: absolute;
-  right: 20vh;
+  right: 20px;
   top: 40vh; /* Ajustamos su alineación superior */
   height: 100vh;
 }
@@ -51,7 +51,6 @@ body,html {
   margin-top: 0px;
   gap: 100px;
   overflow: hidden; /* Asegura que las imágenes fuera del área visible no sean vistas */
-  margin-bottom: 10px;
   z-index: 100;
   position: relative;
 }
@@ -59,8 +58,8 @@ body,html {
 /* Cada contenedor de árboles */
 .arboles1 {
   position: relative;
-  width: 200vh; /* Ajusta el ancho del grupo de árboles */
-  height: 130vh;
+  width: 100%; /* Ajusta el ancho del grupo de árboles */
+  height: 100vh;
   white-space: nowrap; /* Para que las imágenes no se ajusten en múltiples líneas */
   
 }
@@ -68,7 +67,7 @@ body,html {
 /* Estilo de las imágenes de los árboles */
 .arboles1 img {
   position: absolute;
-  width: 100%;
+  height: 100vh;
   transition: transform 1s ease-out; /* Asegura que el movimiento sea suave */
   will-change: transform; /* Mejor rendimiento durante el desplazamiento */
 }
@@ -328,30 +327,134 @@ body,html {
   cursor: pointer;
 }
 
-@media (min-width: 700px) {
-.arboles1 img {
-  width: 90%;
+
+/* MEDIA QUERY */
+/* General: Ajusta el diseño para pantallas pequeñas */
+@media (max-width: 1024px) {
+  #background-section {
+    background-position: center center;
+    background-size: cover;
+  }
+
+  #estaanocheciendo {
+    font-size: 24px; /* Reduce el tamaño del texto */
+    top: 30vh; /* Ajusta la posición */
+    right: 10px; /* Reduce el espacio a los lados */
+  }
+
+  #arboles1 img {
+    width: 80%; /* Reduce el tamaño de las imágenes */
+  }
+
+  #teequivocaste {
+    font-size: 20px; /* Ajusta el tamaño del texto */
+    margin-left: 30%; /* Centra mejor en pantallas pequeñas */
+  }
+
+  #huellas {
+    height: auto; /* Ajusta la altura automáticamente */
+    gap: 20px; /* Reduce el espacio entre huellas */
+  }
+
+  #linterna #draggable {
+    width: 200px; /* Reduce el tamaño de la linterna */
+    height: 80px;
+  }
+
+  #droppable {
+    width: 300px;
+    height: 300px;
+  }
 }
-}
-/* Responsividad para pantallas pequeñas */
-@media (max-width: 767px) {
-  .col-md-6 {
-    width: 100%;
-    padding: 0;
+
+/* Para móviles pequeños */
+@media (max-width: 768px) {
+  #background-section {
+    margin-bottom: 20px; /* Reduce el margen */
+  }
+
+  #estaanocheciendo {
+    font-size: 20px;
+    top: 25vh;
+    right: 5px;
+  }
+
+  #arboles {
+    gap: 50px; /* Reduce el espacio entre elementos */
+  }
+
+  #teequivocaste {
+    margin-left: 20%; /* Centra mejor el texto */
+    font-size: 18px;
+  }
+
+  #huellas {
+    gap: 15px;
+  }
+
+  .huella {
+    width: 80px; /* Ajusta el tamaño de las huellas */
+  }
+
+  #linterna #draggable {
+    width: 150px;
+    height: 60px;
+  }
+
+  #droppable {
+    width: 250px;
+    height: 250px;
+  }
+
+  #droppedImage img {
+    width: 50px; /* Ajusta el tamaño de los ítems */
   }
 
   #modelViewerContainer > model-viewer {
-    height: 400px; /* Ajustar el tamaño del modelo 3D en pantallas pequeñas */
+    height: 300px; /* Ajusta el visor 3D */
+  }
+
+  .modal-body {
+    padding: 10px;
+  }
+
+  .btn-custom {
+    font-size: 14px;
+    padding: 8px 16px;
   }
 }
 
-/* Para dispositivos más grandes, por ejemplo, tabletas y móviles grandes */
-@media (min-width: 768px) {
-  .col-md-6 {
-    width: 50%;
+/* Para pantallas aún más pequeñas */
+@media (max-width: 480px) {
+  #estaanocheciendo {
+    font-size: 16px;
+    top: 20vh;
   }
 
-  #modelViewerContainer > model-viewer {
-    height: 400px;
+  /* #arboles1 img {
+    width: 100%; /* Ajusta las imágenes al ancho disponible */
+
+
+  #teequivocaste {
+    font-size: 16px;
+    margin-left: 10%;
   }
+
+  #linterna #draggable {
+    width: 100px;
+    height: 40px;
+  }
+
+  #droppable {
+    width: 200px;
+    height: 200px;
+  }
+
+  .modal-body {
+    font-size: 14px;
+  }
+  .arboles1 img {
+    max-height: 30vh; /* Reducir tamaño máximo de imágenes */
+    max-width: 90%; /* Ajustar proporción para pantallas pequeñas */
+}
 }
