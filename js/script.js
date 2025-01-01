@@ -34,4 +34,55 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "https://www.cargo.com"; // Cambia este enlace al deseado
     });
 });
-
+document.addEventListener("DOMContentLoaded", () => {
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector("[data-scroll-container]"),
+      smooth: true,
+    });
+  
+    const lightEffectImages = ["img/casa_apagada.png", "img/casa.png"]; // Rutas de las imágenes
+    const lightEffectElement = document.getElementById("light-effect-image");
+    const lightEffectSection = document.getElementById("light-effect-section");
+  
+    let interval; // Almacena el intervalo para cambiar imágenes
+    let lightEffectVisible = false; // Estado de visibilidad de la imagen
+  
+    scroll.on("scroll", (position) => {
+      const sectionTop = lightEffectSection.offsetTop;
+      const sectionHeight = lightEffectSection.offsetHeight;
+      const windowHeight = window.innerHeight;
+      const scrollY = position.scroll.y;
+  
+      // Determinar el progreso del scroll dentro de la sección
+      const progress = Math.min((scrollY + windowHeight - sectionTop) / sectionHeight, 1);
+  
+      // Ajustar opacidad
+      if (progress > 0 && progress <= 1) {
+        lightEffectElement.style.opacity = progress;
+  
+        // Iniciar cambio de imagen si no está en marcha
+        if (!lightEffectVisible) {
+          lightEffectVisible = true;
+          interval = setInterval(() => {
+            const randomImage = lightEffectImages[Math.floor(Math.random() * lightEffectImages.length)];
+            lightEffectElement.src = randomImage;
+          }, 500); // Cambiar imagen cada segundo
+        }
+      } else {
+        lightEffectElement.style.opacity = 0; // Ocultar la imagen fuera de vista
+        lightEffectVisible = false;
+        clearInterval(interval); // Detener cambio de imagen al salir de la vista
+      }
+    });
+  });
+  document.getElementById("light-effect-image").addEventListener("click", () => {
+    window.location.href = "entrada.html"; // Redirección a la nueva página
+  });
+  document.getElementById("left-arrow").addEventListener("click", () => {
+    window.location.href = "baño.html"; // Página para el camino izquierdo
+  });
+  
+  document.getElementById("right-arrow").addEventListener("click", () => {
+    window.location.href = "salon.html"; // Página para el camino derecho
+  });
+  
