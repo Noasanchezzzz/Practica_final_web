@@ -38,38 +38,38 @@ body,html {
   font-family: var(--ff-title);
   color: var(--clr-secondary);
   position: absolute;
+  font-size: 25px;
   right: 20px;
-  top: 40vh; /* Ajustamos su alineación superior */
-  height: 100vh;
+  top: 200px; /* Ajustamos su alineación superior */
+}
+#espacio1{
+  height: 75vh;
 }
 
 /* ARBOLES */
 #arboles {
+  width: 100%;
   display: flex;
-  align-items: flex-end;
-  flex-direction: row;
-  margin-top: 0px;
-  gap: 100px;
-  overflow: hidden; /* Asegura que las imágenes fuera del área visible no sean vistas */
-  z-index: 100;
+  justify-content: center; /* Espaciado entre los dos grupos */
+  align-items: center;
+  overflow: hidden; /* Ocultar elementos fuera de los bordes */
   position: relative;
+  height: 100vh;
 }
 
 /* Cada contenedor de árboles */
 .arboles1 {
-  position: relative;
-  width: 100%; /* Ajusta el ancho del grupo de árboles */
-  height: 100vh;
-  white-space: nowrap; /* Para que las imágenes no se ajusten en múltiples líneas */
-  
+  display: flex;
+  align-items: center;
+  width: 100vh; /* Cada grupo ocupa la mitad del ancho del contenedor */
 }
 
 /* Estilo de las imágenes de los árboles */
 .arboles1 img {
-  position: absolute;
-  height: 100vh;
-  transition: transform 1s ease-out; /* Asegura que el movimiento sea suave */
-  will-change: transform; /* Mejor rendimiento durante el desplazamiento */
+  width: auto; /* Mantén la proporción de la imagen */
+  height: 90vh; /* Altura fija para que los árboles tengan tamaños uniformes */
+  display: block;
+  transition: transform 0.3s ease; /* Efecto suave en cambios de posición */
 }
 
 
@@ -155,7 +155,7 @@ body,html {
   justify-content: center;
   opacity: 0; /* Inicia como invisible */
   transform: translateY(50px); /* Posición inicial fuera de pantalla */
-  transition: opacity 0.5s ease, transform 0.1s ease; /* Animación suave */
+  transition: opacity 0.9s ease, transform 0.4s ease; /* Animación suave */
 }
 
 .huella-container.is-visible {
@@ -336,15 +336,6 @@ body,html {
     background-size: cover;
   }
 
-  #estaanocheciendo {
-    font-size: 24px; /* Reduce el tamaño del texto */
-    top: 30vh; /* Ajusta la posición */
-    right: 10px; /* Reduce el espacio a los lados */
-  }
-
-  #arboles1 img {
-    width: 80%; /* Reduce el tamaño de las imágenes */
-  }
 
   #teequivocaste {
     font-size: 20px; /* Ajusta el tamaño del texto */
@@ -371,16 +362,6 @@ body,html {
 @media (max-width: 768px) {
   #background-section {
     margin-bottom: 20px; /* Reduce el margen */
-  }
-
-  #estaanocheciendo {
-    font-size: 20px;
-    top: 25vh;
-    right: 5px;
-  }
-
-  #arboles {
-    gap: 50px; /* Reduce el espacio entre elementos */
   }
 
   #teequivocaste {
@@ -427,14 +408,9 @@ body,html {
 /* Para pantallas aún más pequeñas */
 @media (max-width: 480px) {
   #estaanocheciendo {
-    font-size: 16px;
-    top: 20vh;
+    margin-left: 20px;
+    right: 0px;
   }
-
-  /* #arboles1 img {
-    width: 100%; /* Ajusta las imágenes al ancho disponible */
-
-
   #teequivocaste {
     font-size: 16px;
     margin-left: 10%;
@@ -453,8 +429,4 @@ body,html {
   .modal-body {
     font-size: 14px;
   }
-  .arboles1 img {
-    max-height: 30vh; /* Reducir tamaño máximo de imágenes */
-    max-width: 90%; /* Ajustar proporción para pantallas pequeñas */
-}
 }
