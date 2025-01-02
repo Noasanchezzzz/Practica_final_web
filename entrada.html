@@ -7,19 +7,34 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <section id="house-entry">
-        <div class="image-container">
-          <img src="img/entrada .png" alt="Entrada de la Casa" id="entry-image">
-          <div class="arrow-container">
-            <div class="arrow left-arrow"style="transform: translate(420px, 190px) rotate(210deg); z-index: 3;">
-              <img src="img/flecha.png" alt="Flecha Izquierda">
-            </div>
-            <div class="arrow right-arrow"style="transform: translate(680px, 25px) rotate(280deg); z-index: 3;">
-              <img src="img/flecha.png" alt="Flecha Derecha">
-            </div>
-          </div>
-        </div>
-      </section>
+  <section id="house-entry">
+    <div class="image-container">
+      <img src="img/ENTRADA.png" alt="Entrada de la Casa" id="entry-image">
+      <div class="arrow left-arrow" id="open-bathroom-modal" style="transform: translate(220px, -300px) rotate(240deg); z-index: 3;">
+        <img src="img/flecha.png" alt="Flecha Izquierda">
+      </div>
+      <div class="arrow right-arrow" id="open-livingroom-modal" style="transform: translate(480px, -210px) rotate(280deg); z-index: 3;">
+        <img src="img/flecha.png" alt="Flecha Derecha">
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal del baño -->
+  <div id="bathroom-modal" class="modal">
+    <span class="close" id="close-bathroom-modal">&times;</span>
+    <div class="modal-content">
+      <img src="img/BAÑO.png" alt="Baño" class="modal-image">
+    </div>
+  </div>
+
+  <!-- Modal del salón -->
+  <div id="livingroom-modal" class="modal">
+    <span class="close" id="close-livingroom-modal">&times;</span>
+    <div class="modal-content">
+      <img src="img/SALON.png" alt="Salón" class="modal-image">
+    </div>
+  </div>
+
   <script src="js/script.js"></script>
 </body>
 </html>

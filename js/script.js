@@ -75,14 +75,38 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-  document.getElementById("light-effect-image").addEventListener("click", () => {
-    window.location.href = "entrada.html"; // Redirección a la nueva página
-  });
-  document.getElementById("left-arrow").addEventListener("click", () => {
-    window.location.href = "baño.html"; // Página para el camino izquierdo
-  });
-  
-  document.getElementById("right-arrow").addEventListener("click", () => {
-    window.location.href = "salon.html"; // Página para el camino derecho
-  });
+  // Obtener los elementos del DOM
+const bathroomModal = document.getElementById('bathroom-modal');
+const livingroomModal = document.getElementById('livingroom-modal');
+const openBathroomModal = document.getElementById('open-bathroom-modal');
+const openLivingroomModal = document.getElementById('open-livingroom-modal');
+const closeBathroomModal = document.getElementById('close-bathroom-modal');
+const closeLivingroomModal = document.getElementById('close-livingroom-modal');
+
+// Funciones para abrir los modales
+openBathroomModal.onclick = function () {
+  bathroomModal.style.display = 'block';
+};
+openLivingroomModal.onclick = function () {
+  livingroomModal.style.display = 'block';
+};
+
+// Funciones para cerrar los modales
+closeBathroomModal.onclick = function () {
+  bathroomModal.style.display = 'none';
+};
+closeLivingroomModal.onclick = function () {
+  livingroomModal.style.display = 'none';
+};
+
+// Cerrar el modal al hacer clic fuera de la imagen
+window.onclick = function (event) {
+  if (event.target === bathroomModal) {
+    bathroomModal.style.display = 'none';
+  }
+  if (event.target === livingroomModal) {
+    livingroomModal.style.display = 'none';
+  }
+};
+
   
