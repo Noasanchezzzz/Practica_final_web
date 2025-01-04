@@ -158,19 +158,35 @@ h2 {
   align-items: center;
   overflow: hidden; /* Ocultar las huellas que salen del viewport */
 }
-
 .huella-container {
+  position: relative; /* Establecer el contenedor con posición relativa */
   display: flex;
   justify-content: center;
-  opacity: 0; /* Inicia como invisible */
-  transform: translateY(50px); /* Posición inicial fuera de pantalla */
-  transition: opacity 0.9s ease, transform 0.4s ease; /* Animación suave */
+  opacity: 0; /* Se mantiene invisible hasta que esté en vista */
+  transform: translateY(50px); /* Desplazamiento inicial */
+  transition: opacity 0.9s ease, transform 0.4s ease; /* Animación */
 }
 
 .huella-container.is-visible {
-  opacity: 1; /* Visible cuando está dentro del viewport */
-  transform: translateY(0); /* Sin desplazamiento vertical */
+  opacity: 1;  /* Hace visibles las huellas y el texto */
+  transform: translateY(0); /* Las mueve a su posición original */
 }
+
+.huella-text {
+  position: absolute;
+  left: 120%;  /* Posiciona el texto al lado de las huellas */
+  top: 50%;  /* Centra el texto verticalmente */
+  transform: translateY(-50%);  /* Ajuste fino para centrar el texto */
+  font-family: var(--ff-body);
+  font-size: 16px;
+  color: var(--clr-primary);
+  text-align: left;
+  white-space: nowrap;
+  max-width: 200px;  /* Ajusta el ancho máximo si el texto es largo */
+}
+
+
+
 
 .huella {
   width: 120px; /* Tamaño de las huellas */
@@ -370,109 +386,6 @@ h3 {
   color: var(--clr-secondary);
   font-size: 25px;
 }
-/* ENTRADA A LA CASA */
-/* Página de entrada */
-#house-entry {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  justify-content: center;
-  background-color: var(--clr-black);
-  overflow: hidden;
-}
-
-.image-container {
-  position: relative;
-}
-
-#entry-image {
-  width: 700px;
-  height: 700px;
-}
-
-/* Contenedor de flechas */
-
-.arrow.left-arrow,
-.arrow.right-arrow {
-  cursor: pointer;
-  position: absolute;
-}
-.arrow img {
-  width: 90px;
-  height: 90px;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.arrow img:hover {
-  transform: scale(1.2); /* Ajusta el tamaño en hover */
-  filter: brightness(1.5); /* Aumenta el brillo */
-}
-/* Estilo de los modales */
-.modal {
-  display: none; /* Oculto por defecto */
-  position: fixed;
-  z-index: 10;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.9); /* Fondo negro semi-transparente */
-}
-
-.modal-content {
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.modal-image {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Botón de cierre */
-.close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  color: white;
-  font-size: 35px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-  color: red;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-
-
-/* Responsividad */
-@media (max-width: 768px) {
-  .arrow img {
-    width: 60px; /* Tamaño menor en pantallas pequeñas */
-    height: 60px;
-  }
-}
-
-@media (max-width: 480px) {
-  .arrow img {
-    width: 50px; /* Tamaño aún menor para móviles pequeños */
-    height: 50px;
-  }
-}
-
-
-
 /* MEDIA QUERY */
 /* General: Ajusta el diseño para pantallas pequeñas */
 @media (max-width: 1024px) {
@@ -514,10 +427,6 @@ h3 {
     width: 450px;
     height: 450px;
   }
-  #entry-image {
-    width: 490px;
-    height: 490px;
-  }
   #light-effect-image {
     width: 450px;
     height: 450px;
@@ -546,14 +455,6 @@ h3 {
     font-size: 14px;
     padding: 8px 16px;
   }
-  .arrow.left-arrow {
-    top: 550px !important;
-    left: -70px !important;
-  }
-  .arrow.right-arrow {
-    top: 550px !important;
-    left: -150px !important;
-  }
 }
 
 /* Para pantallas aún más pequeñas */
@@ -576,10 +477,6 @@ h3 {
     width: 350px;
     height: 350px;
   }
-  #entry-image {
-    width: 350px;
-    height: 350px;
-  }
   #light-effect-image {
     width: 350px;
     height: 350px;
@@ -598,13 +495,5 @@ h3 {
   }
   .modal-body {
     font-size: 14px;
-  }
-  .arrow.left-arrow {
-    top: 500px !important;
-    left: -110px !important;
-  }
-  .arrow.right-arrow {
-    top: 450px !important;
-    left: -250px !important;
   }
 }
