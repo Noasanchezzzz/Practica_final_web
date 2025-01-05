@@ -38,7 +38,7 @@ h1 {
   font-family: var(--ff-title);
   color: var(--clr-secondary);
   position: absolute;
-  font-size: 25px;
+  font-size: 30px;
   right: 20px;
   top: 200px; /* Ajustamos su alineación superior */
 }
@@ -145,7 +145,7 @@ h2 {
   font-family: var(--ff-title);
   color: var(--clr-secondary);
   position: absolute;
-  font-size: 25px;
+  font-size: 30px;
   right: 20px;
 }
 
@@ -174,15 +174,16 @@ h2 {
 
 .huella-text {
   position: absolute;
-  left: 120%;  /* Posiciona el texto al lado de las huellas */
+  left: -250%;  /* Posiciona el texto al lado de las huellas */
   top: 50%;  /* Centra el texto verticalmente */
   transform: translateY(-50%);  /* Ajuste fino para centrar el texto */
-  font-family: var(--ff-body);
-  font-size: 16px;
-  color: var(--clr-primary);
   text-align: left;
   white-space: nowrap;
   max-width: 200px;  /* Ajusta el ancho máximo si el texto es largo */
+  font-family: var(--ff-title);
+  color: var(--clr-secondary);
+  position: absolute;
+  font-size: 25px;
 }
 
 
@@ -291,13 +292,30 @@ h2 {
   transform: scale(1.05); /* Aumenta el tamaño al 120% */
   transition: transform 0.3s ease-in-out; /* Transición suave */
 }
+#productModal{
+  background-color: var(--clr-secondary);
+}
 
 /* Información del producto */
 .modal-content{
-  background-color: var(--background);
+  background-color: var(--ff-opacity);
+  border-radius: 0;
+}
+.modal-header {
+  border-bottom: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin: 4px;
+}
+
+.btn-close:hover {
+  color: var(--clr-primary);
+  text-decoration: none;
+  cursor: pointer;
 }
 .modal-body{
   color: var(--clr-white);
+  padding: 0;
 }
 .text-muted {
   color: var(--clr-secondary) !important;
@@ -362,7 +380,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
 
 .light-effect-container {
@@ -378,7 +396,7 @@ h2 {
   width: 600px; /* Ajusta el tamaño de la imagen */
   height: 600px;
   opacity: 0; /* Inicialmente invisible */
-  transition: opacity 1s ease-in-out; /* Transición suave para opacidad */
+  transition: opacity 0.5s ease-in-out; /* Transición suave para opacidad */
   cursor: pointer;
 }
 h3 {
@@ -399,6 +417,98 @@ h3 {
     gap: 20px; /* Reduce el espacio entre huellas */
   }
 }
+
+#final-effect-section {
+  gap: 30px;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+}
+
+#final-effect-image {
+  width: 600px; /* Ajusta el tamaño de la imagen */
+  height: 600px;
+  opacity: 0; /* Inicialmente invisible */
+  transition: opacity 0.5s ease-in-out; /* Transición suave para opacidad */
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  #final-effect-image {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+@media (max-width: 480px) {
+  #final-effect-image {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+/* Estilo para el interruptor de linterna */
+.btn-torch-switch {
+  cursor: pointer;
+}
+
+/* Estilo de los modales */
+.torch-modal {
+  display: none; /* Ocultar los modales por defecto */
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+}
+
+.torch-modal-content {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: var(--clr-black);
+}
+
+/* Ajustes para que el video ocupe toda la pantalla */
+.video-container {
+  width: 100vw;  /* El contenedor ocupa todo el ancho de la ventana */
+  height: 100vh; /* El contenedor ocupa toda la altura de la ventana */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#torch-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que el video llene toda la pantalla */
+  position: relative;
+}
+
+/* Botón de cerrar modal */
+.close-torch-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 25px;
+  cursor: pointer;
+  z-index: 1010;
+}
+
+
+
 
 /* Para móviles pequeños */
 @media (max-width: 768px) {
@@ -455,6 +565,9 @@ h3 {
     font-size: 14px;
     padding: 8px 16px;
   }
+  .huella-text {
+    left: -150%;
+  }
 }
 
 /* Para pantallas aún más pequeñas */
@@ -495,5 +608,8 @@ h3 {
   }
   .modal-body {
     font-size: 14px;
+  }
+  .huella-text {
+    left: -100%;
   }
 }
