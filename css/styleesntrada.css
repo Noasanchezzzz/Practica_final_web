@@ -22,10 +22,6 @@ body,html {
   overflow: auto; /* Esto permite hacer scroll */
 }
 
-/* Información del producto */
-.modal-contentbl{
-    background-color: var(--background);
-  }
   
 /* ENTRADA A LA CASA */
 /* Página de entrada */
@@ -134,16 +130,55 @@ body,html {
     transform: translate(89px, 307px) scale(1.1); /* Combina posición y efecto */
   }
   
-  /* modal camiseta */
-  /* Estilo para el nuevo modal (Camiseta) */
-.modal-content{
-    background-color: var(--background);
+  #productModal{
+    background-color: var(--clr-secondary);
+  }
+  h3 {
+    font-family: var(--ff-title);
+    color: var(--clr-primary);
+    font-size: 25px;
+  }
+  /* Información del producto */
+  /* Botón de cierre */
+  .close {
+    position: absolute;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    top: 0;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .modal-backdrop.show {
+    opacity: 0
+  }
+  .modal-backdrop {
+    position: relative;
+  }
+  .modal-content{
+    background-color: var(--ff-opacity);
+    border-radius: 0;
+  }
+  .modal-header {
+    border-bottom: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin: 4px;
   }
   .modal-body{
     color: var(--clr-white);
+    padding: 0;
   }
   .text-muted {
-    color: var(--clr-secondary) !important;
+    color: var(--clr-white) !important;
+    font-weight: bold;
   }
   .product-info {
     max-width: 600px;
@@ -164,7 +199,7 @@ body,html {
   /* Estilos del botón */
   .btn-custom {
     background-color: var(--clr-primary);
-    color: var(--clr-white);
+    color: var(--clr-black);
     border: none;
     padding: 10px 20px;
     font-size: 16px;
@@ -173,9 +208,27 @@ body,html {
   }
   
   .btn-custom:hover {
-    background-color: var(--clr-secondary);
+    background-color: var(--clr-black);
     transform: scale(1.05);
-    color: var(--clr-white);
+    color: var(--clr-primary);
+  }
+  /* Eliminar bordes redondeados de los botones */
+  .btn-outline-secondary {
+    border-radius: 0; /* Elimina los bordes redondeados */
+  }
+  
+  /* Cambiar el color de fondo de los botones */
+  .btn-outline-secondary {
+    background-color: var(--clr-primary); /* Color de fondo normal */
+    color: var(--clr-black); /* Color de texto */
+    border: 1px solid var(--clr-black); /* Color del borde */
+  }
+  
+  /* Cambiar el color de fondo cuando pasas el cursor sobre el botón (hover) */
+  .btn-outline-secondary:hover {
+    background-color: var(--clr-black); /* Color de fondo en hover */
+    color: var(--clr-primary); /* Color de texto en hover */
+    border-color: rgba(255, 255, 255, 0); /* Color del borde en hover */
   }
   
   /* Diseño principal */
@@ -194,19 +247,9 @@ body,html {
   /* Asegurarse de que el modelo no se desborde */
   #modelViewerContainer {
     width: 100%;
-    height: 400px; /* Ajusta la altura si es necesario */
+    height: 400px; /* Asegúrate de ajustar la altura si es necesario */
   }
   
-  /* Estilo para los botones */
-  .btn-custom {
-    background-color: var(--clr-primary);
-    color: var(--clr-white);
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 0 !important;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
   
   /* Responsividad */
   @media (max-width: 768px) {

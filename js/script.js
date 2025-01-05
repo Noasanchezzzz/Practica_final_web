@@ -28,7 +28,27 @@ document.addEventListener("DOMContentLoaded", () => {
           $("#draggable").fadeOut(2000);
       }
   });
+// Obtener el modal y el botón de cierre
+const productModal = document.querySelector('#productModal');
+const closeButton = document.querySelector('.close');
 
+// Función para abrir el modal
+const openModal = () => {
+  productModal.style.display = 'block'; // Mostrar el modal
+  document.body.style.overflow = 'hidden'; // Deshabilitar desplazamiento de la página cuando el modal está abierto
+};
+
+// Función para cerrar el modal
+const closeModal = () => {
+  productModal.style.display = 'none'; // Cerrar el modal
+  document.body.style.overflow = ''; // Restaurar el desplazamiento de la página
+};
+
+// Al hacer clic en el botón de cierre (la "x"), ocultar el modal y restaurar el desplazamiento
+closeButton.addEventListener('click', (e) => {
+  e.stopPropagation(); // Evitar que el clic en la "x" se propague
+  closeModal();
+});
   // Redirección al hacer clic en el libro
   $("#book").on("click", () => {
       window.location.href = "https://www.cargo.com"; // Cambia este enlace al deseado
@@ -74,7 +94,13 @@ document.addEventListener("DOMContentLoaded", () => {
       clearInterval(interval); // Detener cambio de imagen al salir de la vista
     }
   });
+
+  // Agregar un evento de clic en la imagen para redirigir a "entrada.html"
+  lightEffectElement.addEventListener('click', () => {
+    window.location.href = 'entrada.html'; // Redirigir a la página "entrada.html"
+  });
 });
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const scroll = new LocomotiveScroll({
@@ -104,11 +130,23 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 document.addEventListener("DOMContentLoaded", () => {
-  // Obtener los elementos específicos para la linterna
+  // Obtener el video de la linterna
+  const torchVideo = document.getElementById('torch-video');
+
+  // Verificar si el video está disponible
+  if (torchVideo) {
+    // Cuando el video termine, redirigir a la página 'gameover.html'
+    torchVideo.onended = () => {
+      window.location.href = 'gameover.html'; // Cambia esta URL si es necesario
+    };
+  } else {
+    console.error('El video de la linterna no se encontró en el DOM.');
+  }
+
+  // Lógica para abrir y cerrar el modal de la linterna
   const torchSwitch = document.getElementById("torch-switch");
   const torchModal = document.getElementById("torch-modal");
   const closeTorchModal = document.getElementById("close-torch-modal");
-  const torchVideo = document.getElementById("torch-video");
 
   // Evento para abrir el modal de la linterna
   torchSwitch.addEventListener("click", () => {
@@ -122,13 +160,6 @@ document.addEventListener("DOMContentLoaded", () => {
     torchVideo.pause();  // Pausar el video cuando se cierra el modal
     torchVideo.currentTime = 0;  // Reiniciar el video
   });
-
-  // Cerrar modal si se hace clic fuera del contenido del modal
-  torchModal.addEventListener("click", (e) => {
-    if (e.target === torchModal) {
-      torchModal.style.display = "none"; // Cerrar modal al hacer clic fuera
-      torchVideo.pause();  // Pausar el video
-      torchVideo.currentTime = 0;  // Reiniciar el video
-    }
-  });
 });
+
+

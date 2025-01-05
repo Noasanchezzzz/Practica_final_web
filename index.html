@@ -128,8 +128,8 @@
                 </div>
                 <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible">
                     <img src="img/huella.png" alt="huellas" class="huella3">
+                    <div class="huella-text">¡Que le pasa a <br>la linterna!</div>
                 </div>
-                <div class="huella-text">Texto del grupo 1</div>
                 <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible">
                     <img src="img/huella.png" alt="huellas" class="huella4">
                 </div>
@@ -144,7 +144,7 @@
                 <div class="light-effect-container">
                   <img id="light-effect-image" src="img/casa_apagada.png" alt="Efecto de luz">
                 </div>
-                <h3>Si eres tan valiente entra en la casa</h3>
+                <h4>Si eres tan valiente entra en la casa</h4>
               </div>
             <section id="huellas" data-scroll-container>
                 <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible"> 
@@ -159,12 +159,12 @@
                 <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible">
                     <img src="img/huella.png" alt="huellas" class="huella3">
                 </div>
-                <div class="huella-text">¡¿Que ha sido eso?!</div>
                 <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible">
                     <img src="img/huella.png" alt="huellas" class="huella4">
                 </div>
                 <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible">
                     <img src="img/huella.png" alt="huellas" class="huella5">
+                    <div class="huella-text">¿Hola, quién es?</div>
                 </div>
                 <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible">
                     <img src="img/huella.png" alt="huellas" class="huella6">
@@ -179,34 +179,27 @@
 </div>
         </div>
         <!-- Modal de linterna -->
-<div id="torch-modal" class="torch-modal">
-    <div class="torch-modal-content">
-        <button id="close-torch-modal" class="close-torch-btn">✖️</button>
-        <div class="video-container">
-            <video id="torch-video" autoplay>
-                <source src="img/susto.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+        <div id="torch-modal">
+            <video id="torch-video" width="100%" autoplay>
+              <source src="img/susto.mp4" type="video/mp4">
+              Tu navegador no soporta la etiqueta de video.
             </video>
-        </div>
-    </div>
-</div>
-  
-        <!-- Modal de Producto -->
+          </div>
+            
+<!-- Modal del Producto -->
 <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <!-- Botón de cierre con la clase 'close' -->
+          <span class="close" id="closeproduct">&times;</span>
         </div>
         <div class="modal-body">
           <div class="container-fluid product-detail-section">
             <div class="row">
-              <!-- Columna del carrusel de imágenes -->
-              <!-- Columna para el modelo 3D -->
-            <div class="col-md-6">
+              <div class="col-md-6">
                 <div id="modelViewerContainer">
-                  <!-- Aquí iría tu visor 3D -->
-                  <model-viewer src="assets\models\tshirt1.glb" alt="Modelo 3D" auto-rotate camera-controls></model-viewer>
+                  <model-viewer src="assets/models/tshirt1.glb" alt="Modelo 3D" auto-rotate camera-controls></model-viewer>
                 </div>
               </div>
   
