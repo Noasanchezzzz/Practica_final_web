@@ -136,7 +136,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", () => {
   // Obtener el video de la linterna
   const torchVideo = document.getElementById('torch-video');
@@ -169,8 +168,6 @@ document.addEventListener("DOMContentLoaded", () => {
     torchVideo.currentTime = 0;  // Reiniciar el video
   });
 });
-
-=======
 document.getElementById("torch-switch-index").addEventListener("click", () => {
   const torchModal = document.getElementById("torch-modal");
   const torchVideo = document.getElementById("torch-video");
@@ -184,7 +181,12 @@ document.getElementById("torch-switch-index").addEventListener("click", () => {
       };
   }
 });
->>>>>>> parent of c8564af (Revert "eliminar")
+
+document.getElementById("close-torch-modal").addEventListener("click", () => {
+  document.getElementById("torch-modal").style.display = "none";
+  torchVideo.pause();
+  torchVideo.currentTime = 0;
+});
 
 document.getElementById("close-torch-modal").addEventListener("click", () => {
   document.getElementById("torch-modal").style.display = "none";

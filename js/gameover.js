@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const closeButton = document.querySelector('.close');
 
-<<<<<<< HEAD
             // Cerrar el modal al hacer clic en la "X"
             closeButton.addEventListener('click', () => {
                 productModal.hide();
@@ -23,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 500); // Un pequeño retraso para asegurar que la página haya vuelto
             });
         }, 4000); // El modal se abrirá después de 4 segundos
-=======
+        
     if (torchCompleted === "true") {
         console.log("torchCompleted is true");
 
@@ -57,8 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     } else {
         console.log("torchCompleted is not 'true'");
->>>>>>> parent of c8564af (Revert "eliminar")
     }
+}
 });
 document.getElementById("closeproduct-gameover").addEventListener("click", () => {
     window.location.href = "index.html#final-effect-section-index";

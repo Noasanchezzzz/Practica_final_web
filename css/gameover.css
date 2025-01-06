@@ -190,8 +190,6 @@ h4{
     display: flex;
     justify-content: center;
   }
-<<<<<<< HEAD
-=======
   .product-info h3{
     margin-bottom: 0;
     margin-left: 0;
@@ -263,4 +261,3 @@ h4{
       margin-left: auto;
   }
 }
->>>>>>> parent of c8564af (Revert "eliminar")

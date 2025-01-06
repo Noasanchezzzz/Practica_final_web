@@ -43,10 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.hide(); // Oculta el modal
     });
   });
-<<<<<<< HEAD
-  
-=======
-
   document.getElementById('back-to-index-entrada').addEventListener('click', () => {
     window.location.href = 'index.html#light-effect-section-index';
 });
@@ -56,4 +52,3 @@ document.getElementById("closeproduct-entrada").addEventListener("click", () => 
     const modal = bootstrap.Modal.getInstance(document.getElementById("productModalEntrada"));
     modal.hide();
 });
->>>>>>> parent of c8564af (Revert "eliminar")
