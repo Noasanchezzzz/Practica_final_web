@@ -1,18 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumar+One&display=swap');
-
-
-
-/* GRUPO DE LOS COLORES, SI PONES VAR(), ELIGES LA OPCIÓN DE ESTOS COLORES QUE YA ESTAN NOMBRADOS,IMPORTANTEEEEEE */
-:root {
-  --clr-black: #000000;
-  --clr-white: #ffffff;
-  --clr-primary: #fff700;
-  --clr-secondary: #ffffff8b;
-  --background:  #03172f;
-  --ff-title: "Kumar One", serif;
-  --ff-body: "inconsolata";
-  --ff-opacity: rgba(0, 0, 0, 0.5);
-}
 /* General */
 body, html {
     margin: 0;
@@ -21,11 +6,9 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
-h1 {
-  font-family: var(--ff-title);
-  color: var(--clr-secondary);
-  position: absolute;
-  font-size: 30px;
+h1, p {
+    text-align: center;
+    color: white;
 }
 
 #susto-container {
@@ -40,186 +23,211 @@ h1 {
     align-items: center;
 }
 
+/* Estilos de Game Over */
 #gameover-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
 }
-
 
 #message {
     font-size: 48px;
     color: white;
 }
 
-/* Modal de Producto */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    text-align: center;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
+/* Información del producto */
 #productModal{
-    background-color: var(--clr-secondary);
-  }
+  background-color: var(--clr-secondary);
+}
+.modal-backdrop.show {
+  opacity: 0
+}
+.modal-backdrop {
+  position: relative;
+}
+.modal-content{
+  background-color: var(--ff-opacity);
+  max-width: 100%;
+  width: 100%;
+  margin:auto 20px;
+  border-radius: 0;
+}
+.modal-header {
+  border-bottom: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin: 4px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+.modal-body {
+  padding: 0;
+  color: var(--clr-white);
+  overflow: hidden;
+}
+.text-muted {
+  color: var(--clr-white) !important;
+  font-weight: bold;
+}
+.product-info {
+  max-width: 600px;
+  font-family: var(--ff-body);
+  padding: 10px;
+}
+
+
+.product-info h2 {
+  font-family: Inconsolata;
+  color: var(--clr-primary);
+}
+
+/* Visor 3D */
+#modelViewerContainer > model-viewer {
+  height: 400px;
+  max-height: 400px;
+}
+
+/* Estilos del botón */
+.btn-custom {
+  background-color: var(--clr-primary);
+  font-family: var(--ff-body);
+  color: var(--clr-black);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 0 !important;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   
-  /* Información del producto */
-  /* Botón de cierre */
-  .close {
-    position: absolute;
-    right: 30px;
-    color: white;
-    font-size: 35px;
-    font-weight: bold;
-    cursor: pointer;
-  }
+}
+
+.btn-custom:hover {
+  background-color: var(--clr-black);
+  transform: scale(1.05);
+  color: var(--clr-primary);
+}
+
+/* Cambiar el color de fondo de los botones */
+.btn-outline-secondary {
+  background-color: var(--clr-primary); /* Color de fondo normal */
+  font-family: var(--ff-body);
+  color: var(--clr-black); /* Color de texto */
+  border: 1px solid var(--clr-black); /* Color del borde */
+  border-radius: 0; /* Elimina los bordes redondeados */
+}
+
+/* Cambiar el color de fondo cuando pasas el cursor sobre el botón (hover) */
+.btn-outline-secondary:hover {
+  background-color: var(--clr-black); /* Color de fondo en hover */
+  color: var(--clr-primary); /* Color de texto en hover */
+  border-color: rgba(255, 255, 255, 0); /* Color del borde en hover */
+}
+
+/* Diseño principal */
+.product-detail-section {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+/* Columnas para el modelo 3D y la info */
+.col-md-6 {
+  flex: 0 0 auto;
+  width: 50%;
+}
+
+.product-info .mt-4 h5 {
+  font-size: 20px;
+}
+.product-info h3 {
+  font-family: var(--ff-title);
+  color: var(--clr-primary);
+  font-size: 25px;
+}
+h4{
+  font-family: var(--ff-title);
+  color: var(--clr-secondary);
+  font-size: 25px;
+}   
+#modelViewerContainer{
+  display: flex;
+  justify-content: center;
+}  
+/* Botón de cierre */
+#closeproduct-gameover {
+  position: absolute;
+  right: 30px;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#closeproduct-gameover:hover {
+  color: red;
+}#message-gameover {
+  font-size: 48px;
+  color: red;
+  text-align: center;
+}
+
+/* MEDIA QUERY */
+/* General: Ajusta el diseño para pantallas pequeñas */
+@media (max-width: 1024px) {
   
-  .close:hover,
-  .close:focus {
-    color: red;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  .modal-backdrop.show {
-    opacity: 0
-  }
-  .modal-backdrop {
-    position: relative;
-  }
-  .modal-content{
-    background-color: var(--ff-opacity);
-    border-radius: 0;
-  }
-  .modal-header {
-    border-bottom: 0;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    margin: 4px;
-  }
-  .modal-body{
-    color: var(--clr-white);
-    padding: 0;
-  }
-  .text-muted {
-    color: var(--clr-white) !important;
-    font-weight: bold;
-  }
-  .product-info {
-    max-width: 600px;
-    font-family: var(--ff-body);
-  }
-  
-  .product-info h2 {
-    font-family: Inconsolata;
-    color: var(--clr-primary);
-  }
-  
-  /* Visor 3D */
-  #modelViewerContainer > model-viewer {
-    width: 100%;
-    height: 400px;
-  }
-  
-  /* Estilos del botón */
-  .btn-custom {
-    background-color: var(--clr-primary);
-    font-family: var(--ff-body);
-    color: var(--clr-black);
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 0 !important;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .btn-custom:hover {
-    background-color: var(--clr-black);
-    transform: scale(1.05);
-    color: var(--clr-primary);
-  }
-  
-  /* Cambiar el color de fondo de los botones */
-  .btn-outline-secondary {
-    background-color: var(--clr-primary); /* Color de fondo normal */
-    font-family: var(--ff-body);
-    color: var(--clr-black); /* Color de texto */
-    border: 1px solid var(--clr-black); /* Color del borde */
-    border-radius: 0; /* Elimina los bordes redondeados */
-  }
-  
-  /* Cambiar el color de fondo cuando pasas el cursor sobre el botón (hover) */
-  .btn-outline-secondary:hover {
-    background-color: var(--clr-black); /* Color de fondo en hover */
-    color: var(--clr-primary); /* Color de texto en hover */
-    border-color: rgba(255, 255, 255, 0); /* Color del borde en hover */
-  }
-  
-  /* Diseño principal */
-  .product-detail-section {
+}
+@media (max-width: 842px) {
+  .row{
     display: flex;
-    justify-content: space-around;
-    gap: 30px;
+    flex-direction: column;
+    align-items: center;
   }
-  
-  /* Columnas para el modelo 3D y la info */
   .col-md-6 {
     flex: 0 0 auto;
-    width: 50%;
-  }
-  
-  /* Asegurarse de que el modelo no se desborde */
-  #modelViewerContainer {
     width: 100%;
-    height: 400px; /* Asegúrate de ajustar la altura si es necesario */
+    display: flex;
+    justify-content: center;
   }
-  h3 {
-    font-family: var(--ff-title);
-    color: var(--clr-primary);
-    font-size: 25px;
+<<<<<<< HEAD
+=======
+  .product-info h3{
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+  .text-muted{
+    margin-bottom: 0;
   }
   h4{
-    font-family: var(--ff-title);
-    color: var(--clr-secondary);
-    font-size: 25px;
+    margin-bottom: 0;
   }
+  .mt-3 {
+    margin-top: 0.5rem !important;
+}
+.mt-4 {
+  margin-top: 1rem !important;
+}
+.container{
+  width: 300px;
+    height: 300px;
+}
+#modelViewerContainer > model-viewer {
+  height: 300px; /* Ajusta el visor 3D */
+  width: 300px;
+  max-height: 100%;
+}
+}
 /* Para móviles pequeños */
 @media (max-width: 768px) {
-
+  .product-info h3{
+    margin-bottom: 0;
+    margin-left: 0;
+  }
   #modelViewerContainer > model-viewer {
     height: 300px; /* Ajusta el visor 3D */
+    width: 300px;
+    max-height: 100%;
   }
 
   .modal-body {
@@ -231,10 +239,28 @@ h1 {
     padding: 8px 16px;
   }
 }
-
+@media (max-width: 576px) {
+  .modal-dialog {
+      max-width: 800px !important;
+      margin-right: auto;
+      margin-left: auto;
+  }
+}
 /* Para pantallas aún más pequeñas */
 @media (max-width: 480px) {
+  .product-info h3{
+    margin-bottom: 0;
+    margin-left: 0;
+  }
   .modal-body {
     font-size: 14px;
   }
 }
+@media (min-width: 576px) {
+  .modal-dialog {
+      min-width: 600px;
+      margin-right: auto;
+      margin-left: auto;
+  }
+}
+>>>>>>> parent of c8564af (Revert "eliminar")

@@ -1,5 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   const scroll = new LocomotiveScroll({
+      el: document.querySelector("[data-scroll-container]"),
+      smooth: true
+  });
+  scroll.update(); // Asegura que Locomotive Scroll se inicialice correctamente al volver a la página
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const scroll = new LocomotiveScroll({
       el: document.querySelector("[data-scroll-container]"), // Contenedor principal
       smooth: true,
       multiplier: 1,
@@ -129,35 +136,59 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", () => {
+  // Obtener el video de la linterna
+  const torchVideo = document.getElementById('torch-video');
+
+  // Verificar si el video está disponible
+  if (torchVideo) {
+    // Cuando el video termine, redirigir a la página 'gameover.html'
+    torchVideo.onended = () => {
+      window.location.href = 'gameover.html'; // Cambia esta URL si es necesario
+    };
+  } else {
+    console.error('El video de la linterna no se encontró en el DOM.');
+  }
+
+  // Lógica para abrir y cerrar el modal de la linterna
   const torchSwitch = document.getElementById("torch-switch");
   const torchModal = document.getElementById("torch-modal");
-  const torchVideo = document.getElementById("torch-video");
   const closeTorchModal = document.getElementById("close-torch-modal");
 
-  let isTorchActivated = false;
-
-  // Abrir el modal y reproducir el video
+  // Evento para abrir el modal de la linterna
   torchSwitch.addEventListener("click", () => {
-    isTorchActivated = true;
-    torchModal.style.display = "flex";
-    torchVideo.play();
+    torchModal.style.display = "flex"; // Mostrar el modal en pantalla completa
+    torchVideo.play(); // Reproducir el video automáticamente
   });
 
-  // Cerrar el modal y pausar el video
+  // Evento para cerrar el modal de la linterna
   closeTorchModal.addEventListener("click", () => {
-    torchModal.style.display = "none";
-    torchVideo.pause();
-    torchVideo.currentTime = 0;
+    torchModal.style.display = "none"; // Ocultar el modal
+    torchVideo.pause();  // Pausar el video cuando se cierra el modal
+    torchVideo.currentTime = 0;  // Reiniciar el video
   });
 });
-document.addEventListener("DOMContentLoaded", () => {
-  const video = document.getElementById("torch-video");
+
+=======
+document.getElementById("torch-switch-index").addEventListener("click", () => {
+  const torchModal = document.getElementById("torch-modal");
+  const torchVideo = document.getElementById("torch-video");
   
-  if (video) {
-      video.addEventListener("ended", () => {
-          window.location.href = "gameover.html"; // Cambia la URL según corresponda
-      });
+  if (!localStorage.getItem("videoPlayed")) {
+      torchModal.style.display = "flex";
+      torchVideo.play();
+      torchVideo.onended = () => {
+          localStorage.setItem("videoPlayed", "true");
+          window.location.href = "gameover.html";
+      };
   }
+});
+>>>>>>> parent of c8564af (Revert "eliminar")
+
+document.getElementById("close-torch-modal").addEventListener("click", () => {
+  document.getElementById("torch-modal").style.display = "none";
+  torchVideo.pause();
+  torchVideo.currentTime = 0;
 });
 

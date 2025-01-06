@@ -89,23 +89,6 @@ body,html {
     position: relative;
   }
   
-  /* Botón de cierre */
-  .close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: white;
-    font-size: 35px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: red;
-    text-decoration: none;
-    cursor: pointer;
-  }
   /* Hover Zoom In para la nota */
 #baño {
     position: absolute;
@@ -130,31 +113,10 @@ body,html {
     transform: translate(89px, 307px) scale(1.1); /* Combina posición y efecto */
   }
   
+ 
+  /* Información del producto */
   #productModal{
     background-color: var(--clr-secondary);
-  }
-  h3 {
-    font-family: var(--ff-title);
-    color: var(--clr-primary);
-    font-size: 25px;
-  }
-  /* Información del producto */
-  /* Botón de cierre */
-  .close {
-    position: absolute;
-    right: 30px;
-    color: white;
-    font-size: 35px;
-    font-weight: bold;
-    cursor: pointer;
-    top: 0;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: red;
-    text-decoration: none;
-    cursor: pointer;
   }
   .modal-backdrop.show {
     opacity: 0
@@ -164,6 +126,9 @@ body,html {
   }
   .modal-content{
     background-color: var(--ff-opacity);
+    max-width: 100%;
+    width: 100%;
+    margin:auto 20px;
     border-radius: 0;
   }
   .modal-header {
@@ -171,10 +136,14 @@ body,html {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     margin: 4px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
   }
-  .modal-body{
-    color: var(--clr-white);
+  .modal-body {
     padding: 0;
+    color: var(--clr-white);
+    overflow: hidden;
   }
   .text-muted {
     color: var(--clr-white) !important;
@@ -183,7 +152,9 @@ body,html {
   .product-info {
     max-width: 600px;
     font-family: var(--ff-body);
+    padding: 10px;
   }
+  
   
   .product-info h2 {
     font-family: Inconsolata;
@@ -192,19 +163,21 @@ body,html {
   
   /* Visor 3D */
   #modelViewerContainer > model-viewer {
-    width: 100%;
     height: 400px;
+    max-height: 400px;
   }
   
   /* Estilos del botón */
   .btn-custom {
     background-color: var(--clr-primary);
+    font-family: var(--ff-body);
     color: var(--clr-black);
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     border-radius: 0 !important;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    
   }
   
   .btn-custom:hover {
@@ -212,16 +185,14 @@ body,html {
     transform: scale(1.05);
     color: var(--clr-primary);
   }
-  /* Eliminar bordes redondeados de los botones */
-  .btn-outline-secondary {
-    border-radius: 0; /* Elimina los bordes redondeados */
-  }
   
   /* Cambiar el color de fondo de los botones */
   .btn-outline-secondary {
     background-color: var(--clr-primary); /* Color de fondo normal */
+    font-family: var(--ff-body);
     color: var(--clr-black); /* Color de texto */
     border: 1px solid var(--clr-black); /* Color del borde */
+    border-radius: 0; /* Elimina los bordes redondeados */
   }
   
   /* Cambiar el color de fondo cuando pasas el cursor sobre el botón (hover) */
@@ -244,36 +215,101 @@ body,html {
     width: 50%;
   }
   
-  /* Asegurarse de que el modelo no se desborde */
-  #modelViewerContainer {
-    width: 100%;
-    height: 400px; /* Asegúrate de ajustar la altura si es necesario */
+  .product-info .mt-4 h5 {
+    font-size: 20px;
+  }
+  .product-info h3 {
+    font-family: var(--ff-title);
+    color: var(--clr-primary);
+    font-size: 25px;
+  }
+  h4{
+    font-family: var(--ff-title);
+    color: var(--clr-secondary);
+    font-size: 25px;
+  }   
+  #modelViewerContainer{
+    display: flex;
+    justify-content: center;
+  }  
+  /* Botón de cierre */
+  .close {
+    position: absolute;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    top: 0;
+    z-index: 100;
   }
   
-  
-  /* Responsividad */
-  @media (max-width: 768px) {
-    .arrow img {
-      width: 60px; /* Tamaño menor en pantallas pequeñas */
-      height: 60px;
-    }
+  .close:hover,
+  .close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
   }
-  
-  @media (max-width: 480px) {
-    .arrow img {
-      width: 50px; /* Tamaño aún menor para móviles pequeños */
-      height: 50px;
-    }
-  }
-  
-  
-  
+  #closeproduct-entrada {
+    position: absolute;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#closeproduct-entrada:hover {
+    color: red;
+}#back-to-index-entrada {
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
   /* MEDIA QUERY */
   /* General: Ajusta el diseño para pantallas pequeñas */
   @media (max-width: 1024px) {
     
   }
-  
+  @media (max-width: 842px) {
+    .row{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .col-md-6 {
+      flex: 0 0 auto;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .product-info h3{
+      margin-bottom: 0;
+      margin-left: 0;
+    }
+    .text-muted{
+      margin-bottom: 0;
+    }
+    h4{
+      margin-bottom: 0;
+    }
+    .mt-3 {
+      margin-top: 0.5rem !important;
+  }
+  .mt-4 {
+    margin-top: 1rem !important;
+  }
+  .container{
+    width: 300px;
+      height: 300px;
+  }
+  #modelViewerContainer > model-viewer {
+    height: 300px; /* Ajusta el visor 3D */
+    width: 300px;
+    max-height: 100%;
+  }
+  }
   /* Para móviles pequeños */
   @media (max-width: 768px) {
     #entry-image {
@@ -306,8 +342,36 @@ body,html {
     #salon:hover{
         transform: translate(56px, 193px)scale(1.1);
     }
-  }
+    .arrow img {
+      width: 60px; /* Tamaño menor en pantallas pequeñas */
+      height: 60px;
+    }
+    .product-info h3{
+      margin-bottom: 0;
+      margin-left: 0;
+    }
+    #modelViewerContainer > model-viewer {
+      height: 300px; /* Ajusta el visor 3D */
+      width: 300px;
+      max-height: 100%;
+    }
   
+    .modal-body {
+      padding: 10px;
+    }
+  
+    .btn-custom {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  }
+  @media (max-width: 576px) {
+    .modal-dialog {
+        max-width: 800px !important;
+        margin-right: auto;
+        margin-left: auto;
+    }
+  }
   /* Para pantallas aún más pequeñas */
   @media (max-width: 480px) {
     #entry-image {
@@ -339,6 +403,24 @@ body,html {
     }
     #salon:hover{
         transform: translate(40px, 122px)scale(1.1);
+    }
+    .arrow img {
+      width: 50px; /* Tamaño aún menor para móviles pequeños */
+      height: 50px;
+    }
+    .product-info h3{
+      margin-bottom: 0;
+      margin-left: 0;
+    }
+    .modal-body {
+      font-size: 14px;
+    }
+  }
+  @media (min-width: 576px) {
+    .modal-dialog {
+        min-width: 600px;
+        margin-right: auto;
+        margin-left: auto;
     }
   }
   
