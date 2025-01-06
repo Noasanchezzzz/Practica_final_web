@@ -1,12 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   const scroll = new LocomotiveScroll({
-      el: document.querySelector("[data-scroll-container]"),
-      smooth: true
-  });
-  scroll.update(); // Asegura que Locomotive Scroll se inicialice correctamente al volver a la página
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const scroll = new LocomotiveScroll({
       el: document.querySelector("[data-scroll-container]"), // Contenedor principal
       smooth: true,
       multiplier: 1,
@@ -38,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
 // Obtener el modal y el botón de cierre
 const productModal = document.querySelector('#productModal');
 const closeButton = document.querySelector('.close');
-
 // Función para abrir el modal
 const openModal = () => {
   productModal.style.display = 'block'; // Mostrar el modal
@@ -73,7 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let interval; // Almacena el intervalo para cambiar imágenes
   let lightEffectVisible = false; // Estado de visibilidad de la imagen
-
   scroll.on("scroll", (position) => {
     const sectionTop = lightEffectSection.offsetTop;
     const sectionHeight = lightEffectSection.offsetHeight;
@@ -107,8 +98,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = 'entrada.html'; // Redirigir a la página "entrada.html"
   });
 });
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const scroll = new LocomotiveScroll({
     el: document.querySelector("[data-scroll-container]"),
@@ -136,8 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-document.addEventListener("DOMContentLoaded", () => {
-  // Obtener el video de la linterna
+document.addEventListener("DOMContentLoaded", () => {// Obtener el video de la linterna
   const torchVideo = document.getElementById('torch-video');
 
   // Verificar si el video está disponible
@@ -162,35 +150,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Evento para cerrar el modal de la linterna
+  // Cerrar el modal y pausar el video
   closeTorchModal.addEventListener("click", () => {
     torchModal.style.display = "none"; // Ocultar el modal
     torchVideo.pause();  // Pausar el video cuando se cierra el modal
     torchVideo.currentTime = 0;  // Reiniciar el video
   });
 });
-document.getElementById("torch-switch-index").addEventListener("click", () => {
-  const torchModal = document.getElementById("torch-modal");
-  const torchVideo = document.getElementById("torch-video");
-  
-  if (!localStorage.getItem("videoPlayed")) {
-      torchModal.style.display = "flex";
-      torchVideo.play();
-      torchVideo.onended = () => {
-          localStorage.setItem("videoPlayed", "true");
-          window.location.href = "gameover.html";
-      };
-  }
-});
-
-document.getElementById("close-torch-modal").addEventListener("click", () => {
-  document.getElementById("torch-modal").style.display = "none";
-  torchVideo.pause();
-  torchVideo.currentTime = 0;
-});
-
-document.getElementById("close-torch-modal").addEventListener("click", () => {
-  document.getElementById("torch-modal").style.display = "none";
-  torchVideo.pause();
-  torchVideo.currentTime = 0;
-});
-

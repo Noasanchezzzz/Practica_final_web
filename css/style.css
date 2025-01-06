@@ -96,7 +96,6 @@ h1 {
   font-weight: bold;
   color: var(--clr-black);
 }
-
 .c-direction-block {
   height: 300vh;
   left: 0;
@@ -133,7 +132,6 @@ h1 {
 .has-scroll-smooth [data-scroll-container] {
   min-height: 0vh !important;
 }
-
 /* SEGUNDO TITULO */
 #teequivocaste{
   position: relative;
@@ -166,7 +164,6 @@ h2 {
   transform: translateY(50px); /* Desplazamiento inicial */
   transition: opacity 0.9s ease, transform 0.4s ease; /* Animación */
 }
-
 .huella-container.is-visible {
   opacity: 1;  /* Hace visibles las huellas y el texto */
   transform: translateY(0); /* Las mueve a su posición original */
@@ -236,8 +233,7 @@ h2 {
   background-position: center;
   display:flex !important;
   color: var(--clr-primary);
-}
-#draggable:hover {
+}#draggable:hover {
   transform: scale(1.1); /* Aumenta el tamaño en un 10% */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
 }
@@ -266,7 +262,6 @@ h2 {
   background-position: center;
   position: relative;
 }
-
 /* Estilo para el libro */
 #book {
   position: absolute;
@@ -295,49 +290,20 @@ h2 {
 #productModal{
   background-color: var(--clr-secondary);
 }
-
-/* Información del producto */
-/* Botón de cierre */
-/* .close {
+.close {
   position: absolute;
   right: 30px;
   color: white;
-  font-size: 35px;
   font-weight: bold;
   cursor: pointer;
-<<<<<<< HEAD
-=======
   margin-top: 30px;
   z-index: 100;
-<<<<<<< HEAD
->>>>>>> parent of c8564af (Revert "eliminar")
-=======
->>>>>>> parent of c8564af (Revert "eliminar")
 }
 
-.close:hover,
-.close:focus {
+.close:hover{
   color: red;
   text-decoration: none;
   cursor: pointer;
-} */
-#light-effect-section-index {
-  position: relative;
-  width: 100%;
-  height: 90vh;
-}
-
-#closeproduct-index {
-  position: absolute;
-  right: 30px;
-  color: white;
-  font-size: 35px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-#closeproduct-index:hover {
-  color: red;
 }
 .modal-backdrop.show {
   opacity: 0
@@ -347,6 +313,9 @@ h2 {
 }
 .modal-content{
   background-color: var(--ff-opacity);
+  max-width: 100%;
+  width: 100%;
+  margin:auto 20px;
   border-radius: 0;
 }
 .modal-header {
@@ -354,10 +323,14 @@ h2 {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   margin: 4px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
 }
-.modal-body{
-  color: var(--clr-white);
+.modal-body {
   padding: 0;
+  color: var(--clr-white);
+  overflow: hidden;
 }
 .text-muted {
   color: var(--clr-white) !important;
@@ -366,8 +339,8 @@ h2 {
 .product-info {
   max-width: 600px;
   font-family: var(--ff-body);
+  padding: 10px;
 }
-
 .product-info h2 {
   font-family: Inconsolata;
   color: var(--clr-primary);
@@ -375,8 +348,8 @@ h2 {
 
 /* Visor 3D */
 #modelViewerContainer > model-viewer {
-  width: 100%;
   height: 400px;
+  max-height: 400px;
 }
 
 /* Estilos del botón */
@@ -389,6 +362,7 @@ h2 {
   font-size: 16px;
   border-radius: 0 !important;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  
 }
 
 .btn-custom:hover {
@@ -396,7 +370,6 @@ h2 {
   transform: scale(1.05);
   color: var(--clr-primary);
 }
-
 /* Cambiar el color de fondo de los botones */
 .btn-outline-secondary {
   background-color: var(--clr-primary); /* Color de fondo normal */
@@ -426,13 +399,9 @@ h2 {
   width: 50%;
 }
 
-/* Asegurarse de que el modelo no se desborde */
-#modelViewerContainer {
-  width: 100%;
-  height: 400px; /* Asegúrate de ajustar la altura si es necesario */
-}
-
-/* ESCENARIO CASA */
+.product-info .mt-4 h5 {
+  font-size: 20px;
+}/* ESCENARIO CASA */
 #light-effect-section {
   position: relative;
   width: 100%;
@@ -446,7 +415,6 @@ h2 {
 .light-effect-container {
   position: relative;
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -459,7 +427,7 @@ h2 {
   transition: opacity 0.5s ease-in-out; /* Transición suave para opacidad */
   cursor: pointer;
 }
-h3 {
+.product-info h3 {
   font-family: var(--ff-title);
   color: var(--clr-primary);
   font-size: 25px;
@@ -468,22 +436,7 @@ h4{
   font-family: var(--ff-title);
   color: var(--clr-secondary);
   font-size: 25px;
-}
-/* MEDIA QUERY */
-/* General: Ajusta el diseño para pantallas pequeñas */
-@media (max-width: 1024px) {
-  #background-section {
-    background-position: center center;
-    background-size: cover;
-  }
-
-  #huellas {
-    height: 125vh; /* Ajusta la altura automáticamente */
-    gap: 20px; /* Reduce el espacio entre huellas */
-  }
-}
-
-#final-effect-section {
+}#final-effect-section {
   gap: 30px;
   width: 100%;
   height: 90vh;
@@ -499,21 +452,6 @@ h4{
   opacity: 0; /* Inicialmente invisible */
   transition: opacity 0.5s ease-in-out; /* Transición suave para opacidad */
 }
-
-@media (max-width: 768px) {
-  #final-effect-image {
-    width: 450px;
-    height: 450px;
-  }
-}
-
-@media (max-width: 480px) {
-  #final-effect-image {
-    width: 350px;
-    height: 350px;
-  }
-}
-
 /* Estilo para el interruptor de linterna */
 .btn-torch-switch {
   background-color: var(--clr-primary);
@@ -532,7 +470,6 @@ h4{
   transform: scale(1.05);
   color: var(--clr-primary);
 }
-
 /* Estilo de los modales */
 .torch-modal {
   display: none; /* Ocultar los modales por defecto */
@@ -563,9 +500,7 @@ h4{
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-#torch-video {
+}#torch-video {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Asegura que el video llene toda la pantalla */
@@ -594,11 +529,67 @@ h4{
   padding: 10px;
   cursor: pointer;
 }
+#modelViewerContainer{
+  display: flex;
+  justify-content: center;
+}
+/* MEDIA QUERY */
+/* General: Ajusta el diseño para pantallas pequeñas */
+@media (max-width: 1024px) {
+  #background-section {
+    background-position: center center;
+    background-size: cover;
+  }
 
+  #huellas {
+    height: 125vh; /* Ajusta la altura automáticamente */
+    gap: 20px; /* Reduce el espacio entre huellas */
+  }
+}
+@media (max-width: 842px) {
+  .row{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .col-md-6 {
+    flex: 0 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .product-info h3{
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+  .text-muted{
+    margin-bottom: 0;
+  }
+  h4{
+    margin-bottom: 0;
+  }.mt-3 {
+    margin-top: 0.5rem !important;
+}
+.mt-4 {
+  margin-top: 1rem !important;
+}
+.container{
+  width: 300px;
+    height: 300px;
+}
+#modelViewerContainer > model-viewer {
+  height: 300px; /* Ajusta el visor 3D */
+  width: 300px;
+  max-height: 100%;
+}
+}
 
-
-/* Para móviles pequeños */
+/* Para ipad */
 @media (max-width: 768px) {
+  .product-info h3{
+    margin-bottom: 0;
+    margin-left: 0;
+  }
   #background-section {
     margin-bottom: 20px; /* Reduce el margen */
   }
@@ -610,7 +601,6 @@ h4{
   #huellas {
     gap: 15px;
   }
-
   #linterna #draggable {
     width: 250px;
     height: 100px;
@@ -642,9 +632,9 @@ h4{
 
   #modelViewerContainer > model-viewer {
     height: 300px; /* Ajusta el visor 3D */
-  }
-
-  .modal-body {
+    width: 300px;
+    max-height: 100%;
+  }.modal-body {
     padding: 10px;
   }
 
@@ -655,15 +645,33 @@ h4{
   .huella-text {
     left: -150%;
   }
+  #final-effect-image {
+    width: 450px;
+    height: 450px;
+  }
+  #light-effect-section {
+    height: 70vh; /* Ocupa la pantalla completa */
+  }
+  #final-effect-section{
+    height: 70vh; /* Ocupa la pantalla completa */
+  }
 }
-
+@media (max-width: 576px) {
+  .modal-dialog {
+      max-width: 800px !important;
+      margin-right: auto;
+      margin-left: auto;
+  }
+}
 /* Para pantallas aún más pequeñas */
 @media (max-width: 480px) {
   h1,h2,h3 {
     margin-left: 20px;
     right: 0px;
+  }.product-info h3{
+    margin-bottom: 0;
+    margin-left: 0;
   }
-
   #linterna #draggable {
     width: 250px;
     height: 100px;
@@ -695,8 +703,25 @@ h4{
   }
   .modal-body {
     font-size: 14px;
-  }
-  .huella-text {
+  }.huella-text {
     left: -100%;
+  }
+  #final-effect-image {
+    width: 350px;
+    height: 350px;
+  }
+  #light-effect-section {
+    height: 60vh; /* Ocupa la pantalla completa */
+  }
+  #final-effect-section{
+    height: 50vh; /* Ocupa la pantalla completa */
+  }
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+      min-width: 600px;
+      margin-right: auto;
+      margin-left: auto;
   }
 }

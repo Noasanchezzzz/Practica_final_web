@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumar+One&display=swap');
+
+
+
+/* GRUPO DE LOS COLORES, SI PONES VAR(), ELIGES LA OPCIÓN DE ESTOS COLORES QUE YA ESTAN NOMBRADOS,IMPORTANTEEEEEE */
+:root {
+  --clr-black: #000000;
+  --clr-white: #ffffff;
+  --clr-primary: #fff700;
+  --clr-secondary: #ffffff8b;
+  --background:  #03172f;
+  --ff-title: "Kumar One", serif;
+  --ff-body: "inconsolata";
+  --ff-opacity: rgba(0, 0, 0, 0.5);
+}
 /* General */
 body, html {
     margin: 0;
@@ -6,9 +21,11 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
-h1, p {
-    text-align: center;
-    color: white;
+h1 {
+  font-family: var(--ff-title);
+  color: var(--clr-secondary);
+  position: absolute;
+  font-size: 30px;
 }
 
 #susto-container {
@@ -23,20 +40,19 @@ h1, p {
     align-items: center;
 }
 
-/* Estilos de Game Over */
 #gameover-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
 }
+
 
 #message {
     font-size: 48px;
     color: white;
 }
-
 /* Información del producto */
 #productModal{
   background-color: var(--clr-secondary);
@@ -78,18 +94,15 @@ h1, p {
   padding: 10px;
 }
 
-
 .product-info h2 {
   font-family: Inconsolata;
   color: var(--clr-primary);
 }
-
 /* Visor 3D */
 #modelViewerContainer > model-viewer {
   height: 400px;
   max-height: 400px;
 }
-
 /* Estilos del botón */
 .btn-custom {
   background-color: var(--clr-primary);
@@ -100,7 +113,6 @@ h1, p {
   font-size: 16px;
   border-radius: 0 !important;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  
 }
 
 .btn-custom:hover {
@@ -137,7 +149,6 @@ h1, p {
   flex: 0 0 auto;
   width: 50%;
 }
-
 .product-info .mt-4 h5 {
   font-size: 20px;
 }
@@ -172,11 +183,9 @@ h4{
   color: red;
   text-align: center;
 }
-
 /* MEDIA QUERY */
 /* General: Ajusta el diseño para pantallas pequeñas */
 @media (max-width: 1024px) {
-  
 }
 @media (max-width: 842px) {
   .row{
@@ -197,8 +206,7 @@ h4{
   .text-muted{
     margin-bottom: 0;
   }
-  h4{
-    margin-bottom: 0;
+  h4{  margin-bottom: 0;
   }
   .mt-3 {
     margin-top: 0.5rem !important;
@@ -237,6 +245,7 @@ h4{
     padding: 8px 16px;
   }
 }
+
 @media (max-width: 576px) {
   .modal-dialog {
       max-width: 800px !important;

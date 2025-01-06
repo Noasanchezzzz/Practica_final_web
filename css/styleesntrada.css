@@ -118,6 +118,24 @@ body,html {
   #productModal{
     background-color: var(--clr-secondary);
   }
+  /* Información del producto */
+  /* Botón de cierre */
+  .close {
+    position: absolute;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    top: 0;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+  }
   .modal-backdrop.show {
     opacity: 0
   }
@@ -161,11 +179,7 @@ body,html {
     color: var(--clr-primary);
   }
   
-  /* Visor 3D */
-  #modelViewerContainer > model-viewer {
-    height: 400px;
-    max-height: 400px;
-  }
+  
   
   /* Estilos del botón */
   .btn-custom {
@@ -218,6 +232,7 @@ body,html {
   .product-info .mt-4 h5 {
     font-size: 20px;
   }
+  
   .product-info h3 {
     font-family: var(--ff-title);
     color: var(--clr-primary);
@@ -228,50 +243,21 @@ body,html {
     color: var(--clr-secondary);
     font-size: 25px;
   }   
-  #modelViewerContainer{
-    display: flex;
-    justify-content: center;
-  }  
-  /* Botón de cierre */
-  .close {
-    position: absolute;
-    right: 30px;
-    color: white;
-    font-size: 35px;
-    font-weight: bold;
-    cursor: pointer;
-    top: 0;
-    z-index: 100;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: red;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  #closeproduct-entrada {
-    position: absolute;
-    right: 30px;
-    color: white;
-    font-size: 35px;
-    font-weight: bold;
-    cursor: pointer;
+   /* Visor 3D */
+#modelViewerContainer > model-viewer {
+  height: 400px;
+  max-height: 400px;
 }
-
-#closeproduct-entrada:hover {
-    color: red;
-}#back-to-index-entrada {
-  font-size: 20px;
-  color: white;
-  cursor: pointer;
+#modelViewerContainer{
+  display: flex;
+  justify-content: center;
 }
-
   /* MEDIA QUERY */
   /* General: Ajusta el diseño para pantallas pequeñas */
   @media (max-width: 1024px) {
     
   }
+  
   @media (max-width: 842px) {
     .row{
       display: flex;
