@@ -24,7 +24,7 @@ body,html {
 
 /* FOTO FONDO */
 #background-section {
-  background-image: url('../img/amanecer.jpg');
+  background-image: url('../img/amanecer.png');
   background-size: cover;
   background-color: var(--background);
   min-height: 100vh; /* Ajusta la altura mínima para evitar corte */
@@ -294,13 +294,14 @@ h2 {
   position: absolute;
   right: 30px;
   color: white;
+  font-size: 35px;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 30px;
-  z-index: 100;
+  top: 0;
 }
 
-.close:hover{
+.close:hover,
+.close:focus {
   color: red;
   text-decoration: none;
   cursor: pointer;
@@ -470,69 +471,129 @@ h4{
   transform: scale(1.05);
   color: var(--clr-primary);
 }
-/* Estilo de los modales */
-.torch-modal {
-  display: none; /* Ocultar los modales por defecto */
-  position: fixed;
-  z-index: 10;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
-}
 
-.torch-modal-content {
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  background-color: var(--clr-black);
-}
-
-/* Ajustes para que el video ocupe toda la pantalla */
-.video-container {
-  width: 100vw;  /* El contenedor ocupa todo el ancho de la ventana */
-  height: 100vh; /* El contenedor ocupa toda la altura de la ventana */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}#torch-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Asegura que el video llene toda la pantalla */
-  position: relative;
-}
-
-#torch-modal {
-  display: none; /* Inicialmente oculto */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
-  align-items: center;
-  justify-content: center;
-  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
-}
-
-#close-torch-modal {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: white;
-  background: red;
-  padding: 10px;
-  cursor: pointer;
-}
 #modelViewerContainer{
   display: flex;
   justify-content: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* Menú de navegación principal */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--clr-black);
+  padding: 20px;
+  color: var(--clr-primary);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.logo {
+  font-family: var(--ff-title);
+  font-size: 28px;
+  color: var(--clr-primary);
+}
+
+/* ✅ Estilo de los enlaces con hover */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--clr-primary);
+  font-size: 18px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* ✅ Efecto hover solo en los enlaces del menú */
+.nav-links a:hover {
+  color: var(--clr-white);
+  transform: scale(1.1);
+}
+
+/* ✅ Estilo del icono de hamburguesa con hover */
+.hamburger {
+  display: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: var(--clr-primary);
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.hamburger:hover {
+  color: var(--clr-white);
+  transform: scale(1.2);
+}
+
+/* ✅ Media Query para hacerlo responsive */
+@media screen and (max-width: 768px) {
+  .hamburger {
+      display: block;
+  }
+
+  .nav-links a {
+      padding: 15px;
+  }
+
+}
+
+
+@media screen and (max-width: 768px) {
+  .nav-links.active {
+      display: flex;
+      align-items: flex-end;
+      height: 180px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      background: var(--clr-black);
+      width: 100%;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      height: 120px;
+      text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* MEDIA QUERY */
 /* General: Ajusta el diseño para pantallas pequeñas */
 @media (max-width: 1024px) {
@@ -725,3 +786,16 @@ h4{
       margin-left: auto;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

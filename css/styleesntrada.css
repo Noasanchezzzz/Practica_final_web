@@ -120,6 +120,25 @@ body,html {
   }
   /* Información del producto */
   /* Botón de cierre */
+  /* Estilo para el interruptor de linterna */
+.botonsalir {
+  background-color: var(--clr-primary);
+  font-family: var(--ff-body);
+  color: var(--clr-black);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 0 !important;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.botonsalir:hover {
+  background-color: var(--clr-black);
+  transform: scale(1.05);
+  color: var(--clr-primary);
+}
+/* Estilo de los modales */
   .close {
     position: absolute;
     right: 30px;

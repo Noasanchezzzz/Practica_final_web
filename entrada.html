@@ -23,7 +23,8 @@
       <img src="img/flecha.png" alt="Flecha Derecha">
     </div>
   </div>
-  <button id="back-to-index-entrada">Volver al Inicio</button>
+  <button id="botonsalir" class="botonsalir">Volver al camino</button>
+
 
 
 </section>
@@ -51,25 +52,24 @@
     <div class="modal-content">
       <div class="modal-header">
         <!-- Botón de cierre con la clase 'close' -->
-        <span class="close" id="closeproduct">&times;</span>
+        <span class="close" id="closeproduct"data-bs-dismiss="modal">&times;</span>
       </div>
       <div class="modal-body">
         <div class="container-fluid product-detail-section">
           <div class="row">
             <div class="col-md-6">
               <div id="modelViewerContainer">
-                <model-viewer src="assets/models/tshirt1.glb" alt="Modelo 3D" auto-rotate camera-controls></model-viewer>
+                <model-viewer src="assets/models/CAMISETA2_SALON.glb" alt="Modelo 3D" auto-rotate camera-controls></model-viewer>
               </div>
             </div>
 
             <!-- Columna de información del producto -->
             <div class="col-md-6">
               <div class="product-info">
-                <h3>Do Not Cross</h3>
-                <p class="text-muted">Referencia: Blanco 5644/303</p>
-                <p>Camiseta relaxed-fit. Cuello redondo, manga corta.
-                  Estampaciones combinadas a contraste en delantero y espalda.</p>
-                <h4>25,99€</h4>
+                <h3>Chandelier</h3>
+                <p class="text-muted">Referencia: Negro 6890/333</p>
+                <p>Camiseta relaxed-fit. Cuello redondo, manga corta y de color negro. Idela para pasar desapercibido en una escena del crimen.</p>
+                <h4>21,00€</h4>
                 <div class="size-selection">
                   <label for="size" class="form-label">Selecciona tu talla:</label>
                   <div class="btn-group" role="group" aria-label="Size Selection">
@@ -83,7 +83,7 @@
                 <button class="btn btn-custom mt-3">Añadir al carrito</button>
                 <div class="mt-4">
                   <h5>Reseñas</h5>
-                  <p><strong>★★★★☆</strong> 4.5 de 5 estrellas (100 reseñas)</p>
+                  <p><strong>★★★☆☆</strong> 3.5 de 5 estrellas (30 reseñas)</p>
                 </div>
               </div>
             </div>
@@ -93,6 +93,7 @@
     </div>
   </div>
 </div>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- MODELO 3D -->
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>

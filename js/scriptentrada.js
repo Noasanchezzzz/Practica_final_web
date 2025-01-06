@@ -28,17 +28,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 document.addEventListener("DOMContentLoaded", () => {
-  // Abrir el modal del producto (camiseta) cuando se hace clic en la imagen de la camiseta
+  // Cerrar el modal del producto cuando se hace clic en la "X" (botón de cierre)
+  document.getElementById("botonsalir").addEventListener("click", () => {
+    window.location.href = "index.html"; // Redirige a la página principal
+  });
+});
+document.addEventListener("DOMContentLoaded", () => {
+  // Selección del modal
+  var modalElement = document.getElementById("productModal");
+  var modal = new bootstrap.Modal(modalElement);
+
+  // Mostrar el modal al hacer clic en la camiseta (elemento con id 'salon')
   document.getElementById("salon").addEventListener("click", () => {
-    // Mostrar el modal de producto
-    var modal = new bootstrap.Modal(document.getElementById("productModal"));
-    modal.show(); // Muestra el modal
+      modal.show(); // Muestra el modal
   });
 
-  // Cerrar el modal del producto cuando se hace clic en la "X" (botón de cierre)
+  // Cerrar el modal al hacer clic en la "X" (botón de cierre)
   document.getElementById("closeproduct").addEventListener("click", () => {
-    // Obtener el modal
-    var modal = bootstrap.Modal.getInstance(document.getElementById("productModal"));
-    modal.hide(); // Oculta el modal
+      modal.hide(); // Oculta el modal
   });
 });

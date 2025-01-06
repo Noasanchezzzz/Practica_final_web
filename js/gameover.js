@@ -1,55 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOMContentLoaded fired");
+    console.log("Gameover page loaded");
 
-    // Establecer temporalmente el valor de torchCompleted para pruebas
-    localStorage.setItem("torchCompleted", "true");  // Solo por prueba
+    const torchVideo = document.getElementById("torch-video");
+    const torchModal = document.getElementById("torch-modal");
+    const gameoverContainer = document.getElementById("gameover-container");
+    const productModalElement = document.getElementById("productModal");
+    const closeButton = document.getElementById("closeproduct");
 
-    // Verificar si el valor de torchCompleted está presente en localStorage
-    const torchCompleted = localStorage.getItem("torchCompleted");
-    console.log("torchCompleted (from localStorage):", torchCompleted);
+    // Solo se ejecuta si venimos desde index.html (linterna encendida)
+    if (localStorage.getItem("playScareVideo") === "true") {
+        localStorage.removeItem("playScareVideo"); // Evitar que se repita
 
-    if (torchCompleted === "true") {
-        console.log("torchCompleted is true");
+        // Mostrar el video y reproducirlo
+        torchModal.style.display = "flex";
+        torchVideo.play();
 
-        // Mostrar el contenedor de "has muerto"
-        const gameoverContainer = document.getElementById("gameover-container");
-        console.log("gameoverContainer:", gameoverContainer);
+        // Al finalizar el video, mostrar el mensaje de "Has muerto"
+        torchVideo.onended = () => {
+            torchModal.style.display = "none"; 
+            gameoverContainer.style.display = "flex"; 
 
-        if (gameoverContainer) {
-            gameoverContainer.style.display = "flex"; // Asegúrate de que el contenedor sea visible
-            console.log("Gameover container displayed");
-        }
-
-        // Mostrar el modal de producto después de 4 segundos
-        const productModalElement = document.getElementById("productModal");
-        const closeButton = document.getElementById("closeproduct");
-
-        if (productModalElement) {
+            // Mostrar el modal de la camiseta 4 segundos después
             setTimeout(() => {
-                console.log("Initializing product modal...");
-                const productModal = new bootstrap.Modal(productModalElement);
+                const productModal = new bootstrap.Modal(productModalElement, {
+                    backdrop: 'static',
+                    keyboard: false
+                });
                 productModal.show();
-                console.log("Product modal displayed");
-
-                if (closeButton) {
-                    closeButton.addEventListener("click", () => {
-                        console.log("Close button clicked");
-                        productModal.hide();
-                        window.history.back();
-
-                        setTimeout(() => {
-                            window.scrollTo(0, document.body.scrollHeight);
-                            console.log("Scrolled to bottom of page");
-                        }, 500);
-                    });
-                }
-            }, 4000); // Esperar 4 segundos para mostrar el modal
-        }
-
-    } else {
-        console.log("torchCompleted is not 'true'");
+            }, 4000);
+        };
     }
 
-    // Eliminar el valor de `torchCompleted` solo para depuración si es necesario
-    // localStorage.removeItem("torchCompleted");
+    // ✅ Cerrar modal y redirigir a un enlace externo al hacer clic en la "X"
+    closeButton.addEventListener("click", () => {
+        window.location.href = "https://www.instagram.com";
+    });
 });

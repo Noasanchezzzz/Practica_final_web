@@ -20,7 +20,23 @@
         
     </head>
     <body>
-        <div data-scroll-container>
+
+
+        
+            <nav class="navbar">
+                <div class="logo">Gotdem</div>
+                <ul class="nav-links">
+                    <li><a href="#linterna">Do not cross</a></li>
+                    <li><a href="#light-effect-section">Chandelier</a></li>
+                    <li><a href="#final-effect-section">Screamer</a></li>
+                    <li><a href="#contact-section">Contacto</a></li>
+                </ul>
+                <!-- Botón de menú hamburguesa -->
+                <div class="hamburger" id="hamburger-menu">
+                    ☰
+                </div>
+            </nav>
+            <div data-scroll-container>
             <section id="background-section">
                 <section id="espacio1">
                 </section>
@@ -44,22 +60,22 @@
                 <div id="direction" data-scroll-container>
                     <div class="c-direction-block_item -two">
                         <span class="c-direction-block_item_inner" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-8" data-scroll-target="#direction">
-                            NO PASAR    NO PASAR   NO PASAR    NO PASAR   NO PASAR    NO PASAR   NO PASAR    NO PASAR
+                            DO NOT CROSS    DEMON INSIDE    DO NOT CROSS    DEMON INSIDE    DO NOT CROSS    DEMON INSIDE    
                         </span>
                     </div>
                     <div class="c-direction-block_item -three">
                         <span class="c-direction-block_item_inner" data-scroll data-scroll-direction="horizontal" data-scroll-speed="9" data-scroll-target="#direction" data-scroll-delay="0.05">
-                            NO PASAR    NO PASAR   NO PASAR    NO PASAR   NO PASAR    NO PASAR   NO PASAR    NO PASAR
+                            DO NOT CROSS    DEMON INSIDE    DO NOT CROSS    DEMON INSIDE    DO NOT CROSS    DEMON INSIDE    
                         </span>
                     </div>
                     <div class="c-direction-block_item -four">
                         <span class="c-direction-block_item_inner" data-scroll data-scroll-direction="horizontal" data-scroll-speed="15" data-scroll-target="#direction">
-                            NO PASAR    NO PASAR   NO PASAR    NO PASAR   NO PASAR    NO PASAR   NO PASAR    NO PASAR
+                            DO NOT CROSS    DEMON INSIDE    DO NOT CROSS    DEMON INSIDE    DO NOT CROSS    DEMON INSIDE    
                         </span>
                     </div>
                     <div class="c-direction-block_item -five">
                         <span class="c-direction-block_item_inner" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-20" data-scroll-target="#direction" data-scroll-delay="0.05">
-                            NO PASAR    NO PASAR   NO PASAR    NO PASAR   NO PASAR    NO PASAR   NO PASAR    NO PASAR
+                            DO NOT CROSS    DEMON INSIDE    DO NOT CROSS    DEMON INSIDE    DO NOT CROSS    DEMON INSIDE    
                         </span>
                     </div>
                 </div>
@@ -140,12 +156,14 @@
                     <img src="img/huella.png" alt="huellas" class="huella6">
                 </div>
             </section>
+            <section id="light-effect-section">
             <div id="light-effect-section" class="section light-effect-section">
                 <div class="light-effect-container">
                   <img id="light-effect-image" src="img/casa_apagada.png" alt="Efecto de luz">
                 </div>
                 <h4>Si eres tan valiente entra en la casa</h4>
               </div>
+            </section>
             <section id="huellas" data-scroll-container>
                 <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible"> 
                     <img src="img/huella.png" alt="huellas" class="huella">
@@ -171,6 +189,7 @@
                 </div>
             </section>
 <!-- Sección final con la imagen de la persona -->
+<section id="final-effect-section">
 <div id="final-effect-section">
     <img id="final-effect-image" src="img/personafondo.png" alt="Efecto final">
     
@@ -178,13 +197,6 @@
     <button id="torch-switch" class="btn-torch-switch">Enciende la linterna</button>
 </div>
         </div>
-        <!-- Modal de linterna -->
-        <div id="torch-modal">
-            <video id="torch-video" width="100%" autoplay>
-              <source src="img/susto.mp4" type="video/mp4">
-              Tu navegador no soporta la etiqueta de video.
-            </video>
-          </div>
             
 <!-- Modal del Producto -->
 <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
@@ -199,7 +211,8 @@
             <div class="row">
               <div class="col-md-6">
                 <div id="modelViewerContainer">
-                  <model-viewer src="assets/models/tshirt1.glb" alt="Modelo 3D" auto-rotate camera-controls></model-viewer>
+                    <model-viewer src="assets/models/tshirt1.glb" alt="Modelo 3D" auto-rotate camera-controls></model-viewer>
+
                 </div>
               </div>
   
@@ -207,10 +220,9 @@
               <div class="col-md-6">
                 <div class="product-info">
                   <h3>Do Not Cross</h3>
-                  <p class="text-muted">Referencia: Blanco 5644/303</p>
-                  <p>Camiseta relaxed-fit. Cuello redondo, manga corta.
-                    Estampaciones combinadas a contraste en delantero y espalda.</p>
-                  <h4>25,99€</h4>
+                  <p class="text-muted">Referencia: Negro 5644/303</p>
+                  <p>Camiseta relaxed-fit. Cuello redondo, manga corta de color negro. Con nuestra seña de identidad "DO NOT CROSS" y "DEMON INSIDE"</p>
+                  <h4>28,99€</h4>
                   <div class="size-selection">
                     <label for="size" class="form-label">Selecciona tu talla:</label>
                     <div class="btn-group" role="group" aria-label="Size Selection">
