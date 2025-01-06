@@ -1,5 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   const scroll = new LocomotiveScroll({
+      el: document.querySelector("[data-scroll-container]"),
+      smooth: true
+  });
+  scroll.update(); // Asegura que Locomotive Scroll se inicialice correctamente al volver a la página
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const scroll = new LocomotiveScroll({
       el: document.querySelector("[data-scroll-container]"), // Contenedor principal
       smooth: true,
       multiplier: 1,
@@ -129,35 +136,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-document.addEventListener("DOMContentLoaded", () => {
-  const torchSwitch = document.getElementById("torch-switch");
+document.getElementById("torch-switch-index").addEventListener("click", () => {
   const torchModal = document.getElementById("torch-modal");
   const torchVideo = document.getElementById("torch-video");
-  const closeTorchModal = document.getElementById("close-torch-modal");
-
-  let isTorchActivated = false;
-
-  // Abrir el modal y reproducir el video
-  torchSwitch.addEventListener("click", () => {
-    isTorchActivated = true;
-    torchModal.style.display = "flex";
-    torchVideo.play();
-  });
-
-  // Cerrar el modal y pausar el video
-  closeTorchModal.addEventListener("click", () => {
-    torchModal.style.display = "none";
-    torchVideo.pause();
-    torchVideo.currentTime = 0;
-  });
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const video = document.getElementById("torch-video");
   
-  if (video) {
-      video.addEventListener("ended", () => {
-          window.location.href = "gameover.html"; // Cambia la URL según corresponda
-      });
+  if (!localStorage.getItem("videoPlayed")) {
+      torchModal.style.display = "flex";
+      torchVideo.play();
+      torchVideo.onended = () => {
+          localStorage.setItem("videoPlayed", "true");
+          window.location.href = "gameover.html";
+      };
   }
+});
+
+document.getElementById("close-torch-modal").addEventListener("click", () => {
+  document.getElementById("torch-modal").style.display = "none";
+  torchVideo.pause();
+  torchVideo.currentTime = 0;
 });
 

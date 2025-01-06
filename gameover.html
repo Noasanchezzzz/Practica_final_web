@@ -18,55 +18,55 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
-    <div id="gameover-container">
-        <h1 id="message">¡Has muerto!</h1>
-    </div>
-
-    <!-- Modal de Producto -->
-<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <h1 id="message-gameover">¡Has muerto!</h1>
+    <!-- Modal del Producto -->
+<div class="modal fade" id="productModalGameover" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close" id="closeproduct">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid product-detail-section">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div id="modelViewerContainer">
-                                <model-viewer src="assets/models/camiseta3_asesino.glb" alt="Modelo 3D" auto-rotate camera-controls></model-viewer>
-                            </div>
-                        </div>
-                        <!-- Columna de información del producto -->
-                        <div class="col-md-6">
-                            <div class="product-info">
-                                <h3>Do Not Cross</h3>
-                                <p class="text-muted">Referencia: Blanco 5644/303</p>
-                                <p>Camiseta relaxed-fit. Cuello redondo, manga corta. Estampaciones combinadas a contraste en delantero y espalda.</p>
-                                <h4>25,99€</h4>
-                                <div class="size-selection">
-                                    <label for="size" class="form-label">Selecciona tu talla:</label>
-                                    <div class="btn-group" role="group" aria-label="Size Selection">
-                                        <button type="button" class="btn btn-outline-secondary" data-size="XS">XS</button>
-                                        <button type="button" class="btn btn-outline-secondary" data-size="S">S</button>
-                                        <button type="button" class="btn btn-outline-secondary" data-size="M">M</button>
-                                        <button type="button" class="btn btn-outline-secondary" data-size="L">L</button>
-                                        <button type="button" class="btn btn-outline-secondary" data-size="XL">XL</button>
-                                    </div>
-                                </div>
-                                <button class="btn btn-custom mt-3">Añadir al carrito</button>
-                                <div class="mt-4">
-                                    <h5>Reseñas</h5>
-                                    <p><strong>★★★★☆</strong> 4.5 de 5 estrellas (100 reseñas)</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- Botón de cierre con la clase 'close' -->
+          <span class="close" id="closeproduct-gameover">&times;</span>
         </div>
+        <div class="modal-body">
+          <div class="container-fluid product-detail-section">
+            <div class="row">
+              <div class="col-md-6">
+                <div id="modelViewerContainer">
+                  <model-viewer src="assets/models/camiseta3_asesino.glb" alt="Modelo 3D" auto-rotate camera-controls></model-viewer>
+                </div>
+              </div>
+  
+              <!-- Columna de información del producto -->
+              <div class="col-md-6">
+                <div class="product-info">
+                  <h3>Do Not Cross</h3>
+                  <p class="text-muted">Referencia: Blanco 5644/303</p>
+                  <p>Camiseta relaxed-fit. Cuello redondo, manga corta.
+                    Estampaciones combinadas a contraste en delantero y espalda.</p>
+                  <h4>25,99€</h4>
+                  <div class="size-selection">
+                    <label for="size" class="form-label">Selecciona tu talla:</label>
+                    <div class="btn-group" role="group" aria-label="Size Selection">
+                      <button type="button" class="btn btn-outline-secondary" data-size="XS">XS</button>
+                      <button type="button" class="btn btn-outline-secondary" data-size="S">S</button>
+                      <button type="button" class="btn btn-outline-secondary" data-size="M">M</button>
+                      <button type="button" class="btn btn-outline-secondary" data-size="L">L</button>
+                      <button type="button" class="btn btn-outline-secondary" data-size="XL">XL</button>
+                    </div>
+                  </div>
+                  <button class="btn btn-custom mt-3">Añadir al carrito</button>
+                  <div class="mt-4">
+                    <h5>Reseñas</h5>
+                    <p><strong>★★★★☆</strong> 4.5 de 5 estrellas (100 reseñas)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
     
      <!-- jQuery UI y archivo JS -->
      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
