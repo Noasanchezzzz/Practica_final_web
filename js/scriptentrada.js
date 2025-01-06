@@ -44,12 +44,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  document.getElementById('back-to-index-entrada').addEventListener('click', () => {
-    window.location.href = 'index.html#light-effect-section-index';
-});
-
-// Modal de Producto corregido
-document.getElementById("closeproduct-entrada").addEventListener("click", () => {
-    const modal = bootstrap.Modal.getInstance(document.getElementById("productModalEntrada"));
-    modal.hide();
-});
+  

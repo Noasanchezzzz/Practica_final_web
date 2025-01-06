@@ -32,8 +32,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log("Product modal displayed");
 
                 if (closeButton) {
-                    const closeButtonGameOver = document.getElementById("closeproduct-gameover").addEventListener("click", () => {
-                        window.location.href = "index.html#final-effect-section-index";
+                    closeButton.addEventListener("click", () => {
+                        console.log("Close button clicked");
+                        productModal.hide();
+                        window.history.back();
+
+                        setTimeout(() => {
+                            window.scrollTo(0, document.body.scrollHeight);
+                            console.log("Scrolled to bottom of page");
+                        }, 500);
                     });
                 }
             }, 4000); // Esperar 4 segundos para mostrar el modal
@@ -46,7 +53,3 @@ document.addEventListener("DOMContentLoaded", () => {
     // Eliminar el valor de `torchCompleted` solo para depuración si es necesario
     // localStorage.removeItem("torchCompleted");
 });
-document.getElementById("closeproduct-gameover").addEventListener("click", () => {
-    window.location.href = "index.html#final-effect-section-index";
-});
-
