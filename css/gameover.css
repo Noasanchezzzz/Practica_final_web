@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumar+One&display=swap');
+
+
+
+/* GRUPO DE LOS COLORES, SI PONES VAR(), ELIGES LA OPCIÓN DE ESTOS COLORES QUE YA ESTAN NOMBRADOS,IMPORTANTEEEEEE */
+:root {
+  --clr-black: #000000;
+  --clr-white: #ffffff;
+  --clr-primary: #fff700;
+  --clr-secondary: #ffffff8b;
+  --background:  #03172f;
+  --ff-title: "Kumar One", serif;
+  --ff-body: "inconsolata";
+  --ff-opacity: rgba(0, 0, 0, 0.5);
+}
 /* General */
 body, html {
     margin: 0;
@@ -6,9 +21,11 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
-h1, p {
-    text-align: center;
-    color: white;
+h1 {
+  font-family: var(--ff-title);
+  color: var(--clr-secondary);
+  position: absolute;
+  font-size: 30px;
 }
 
 #susto-container {
@@ -23,14 +40,14 @@ h1, p {
     align-items: center;
 }
 
-/* Estilos de Game Over */
 #gameover-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
 }
+
 
 #message {
     font-size: 48px;
@@ -188,3 +205,36 @@ h1, p {
     width: 100%;
     height: 400px; /* Asegúrate de ajustar la altura si es necesario */
   }
+  h3 {
+    font-family: var(--ff-title);
+    color: var(--clr-primary);
+    font-size: 25px;
+  }
+  h4{
+    font-family: var(--ff-title);
+    color: var(--clr-secondary);
+    font-size: 25px;
+  }
+/* Para móviles pequeños */
+@media (max-width: 768px) {
+
+  #modelViewerContainer > model-viewer {
+    height: 300px; /* Ajusta el visor 3D */
+  }
+
+  .modal-body {
+    padding: 10px;
+  }
+
+  .btn-custom {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* Para pantallas aún más pequeñas */
+@media (max-width: 480px) {
+  .modal-body {
+    font-size: 14px;
+  }
+}

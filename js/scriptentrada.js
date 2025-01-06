@@ -43,4 +43,5 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.hide(); // Oculta el modal
     });
   });
+
   

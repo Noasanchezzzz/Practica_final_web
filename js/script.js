@@ -130,36 +130,34 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 document.addEventListener("DOMContentLoaded", () => {
-  // Obtener el video de la linterna
-  const torchVideo = document.getElementById('torch-video');
-
-  // Verificar si el video está disponible
-  if (torchVideo) {
-    // Cuando el video termine, redirigir a la página 'gameover.html'
-    torchVideo.onended = () => {
-      window.location.href = 'gameover.html'; // Cambia esta URL si es necesario
-    };
-  } else {
-    console.error('El video de la linterna no se encontró en el DOM.');
-  }
-
-  // Lógica para abrir y cerrar el modal de la linterna
   const torchSwitch = document.getElementById("torch-switch");
   const torchModal = document.getElementById("torch-modal");
+  const torchVideo = document.getElementById("torch-video");
   const closeTorchModal = document.getElementById("close-torch-modal");
 
-  // Evento para abrir el modal de la linterna
+  let isTorchActivated = false;
+
+  // Abrir el modal y reproducir el video
   torchSwitch.addEventListener("click", () => {
-    torchModal.style.display = "flex"; // Mostrar el modal en pantalla completa
-    torchVideo.play(); // Reproducir el video automáticamente
+    isTorchActivated = true;
+    torchModal.style.display = "flex";
+    torchVideo.play();
   });
 
-  // Evento para cerrar el modal de la linterna
+  // Cerrar el modal y pausar el video
   closeTorchModal.addEventListener("click", () => {
-    torchModal.style.display = "none"; // Ocultar el modal
-    torchVideo.pause();  // Pausar el video cuando se cierra el modal
-    torchVideo.currentTime = 0;  // Reiniciar el video
+    torchModal.style.display = "none";
+    torchVideo.pause();
+    torchVideo.currentTime = 0;
   });
 });
-
+document.addEventListener("DOMContentLoaded", () => {
+  const video = document.getElementById("torch-video");
+  
+  if (video) {
+      video.addEventListener("ended", () => {
+          window.location.href = "gameover.html"; // Cambia la URL según corresponda
+      });
+  }
+});
 
