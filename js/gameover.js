@@ -33,6 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ✅ Cerrar modal y redirigir a un enlace externo al hacer clic en la "X"
     closeButton.addEventListener("click", () => {
-        window.location.href = "https://www.instagram.com";
+        window.location.href = "https://gotdem.cargo.site/";
     });
 });

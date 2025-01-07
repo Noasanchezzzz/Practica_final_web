@@ -104,43 +104,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const hamburgerMenu = document.getElementById("hamburger-menu");
-  const navLinks = document.querySelector(".nav-links");
+    const hamburgerMenu = document.getElementById("hamburger-menu");
+    const navLinks = document.querySelector(".nav-links");
 
-  // ✅ Configuración de Locomotive Scroll
-  const scroll = new LocomotiveScroll({
-      el: document.querySelector("[data-scroll-container]"),
-      smooth: true
-  });
-
-  // ✅ Activar menú hamburguesa
-  hamburgerMenu.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-  });
-
-  // ✅ Scroll suave y cierre del menú al hacer clic en un enlace
-  document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', function (e) {
-          e.preventDefault(); // Evitar el comportamiento por defecto del enlace
-          const targetId = this.getAttribute('href');
-          scroll.scrollTo(targetId); // Desplazamiento suave con Locomotive Scroll
-          navLinks.classList.remove("active"); // Cerrar menú hamburguesa
-      });
-  });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    // Selección del modal y creación de la instancia de Bootstrap Modal
-    var modalElement = document.getElementById("productModal");
-    var modal = new bootstrap.Modal(modalElement);
-
-    // Mostrar el modal al hacer clic en la camiseta (elemento con id 'tshirt')
-    document.getElementById("tshirt").addEventListener("click", () => {
-        modal.show(); // Muestra el modal
+    // ✅ Configuración de Locomotive Scroll
+    const scroll = new LocomotiveScroll({
+        el: document.querySelector("[data-scroll-container]"),
+        smooth: true
     });
 
-    // Cerrar el modal al hacer clic en la "X" (botón de cierre)
-    document.getElementById("closeproduct").addEventListener("click", () => {
-        modal.hide(); // Oculta el modal
+    // ✅ Activar menú hamburguesa
+    hamburgerMenu.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+
+    // ✅ Scroll suave para enlaces internos
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            
+            // Verificar si es un enlace interno (comienza con #)
+            if (targetId.startsWith("#")) {
+                e.preventDefault(); // Evitar el comportamiento predeterminado
+                scroll.scrollTo(targetId); // Desplazamiento suave con Locomotive Scroll
+                navLinks.classList.remove("active"); // Cerrar menú hamburguesa
+            } else {
+                // Permitir comportamiento normal para enlaces externos
+                navLinks.classList.remove("active"); // Cerrar menú hamburguesa para todos
+            }
+        });
     });
 });
