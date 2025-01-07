@@ -34,7 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // ✅ Redirección al hacer clic en el libro
   $("#book").on("click", () => {
       window.location.href = "https://www.cargo.com"; 
+      
   });
+   
+
+  
 
   // ✅ Efecto de luz (Mantiene la transición de imágenes)
   const lightEffectImages = ["img/casa_apagada.png", "img/casa.png"];
@@ -125,3 +129,18 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    // Selección del modal y creación de la instancia de Bootstrap Modal
+    var modalElement = document.getElementById("productModal");
+    var modal = new bootstrap.Modal(modalElement);
+
+    // Mostrar el modal al hacer clic en la camiseta (elemento con id 'tshirt')
+    document.getElementById("tshirt").addEventListener("click", () => {
+        modal.show(); // Muestra el modal
+    });
+
+    // Cerrar el modal al hacer clic en la "X" (botón de cierre)
+    document.getElementById("closeproduct").addEventListener("click", () => {
+        modal.hide(); // Oculta el modal
+    });
+});

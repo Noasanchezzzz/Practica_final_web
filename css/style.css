@@ -22,8 +22,7 @@ body,html {
   overflow: auto; /* Esto permite hacer scroll */
 }
 
-/* FOTO FONDO */
-#background-section {
+body > div:nth-child(2){
   background-image: url('../img/amanecer.png');
   background-size: cover;
   background-color: var(--background);
@@ -31,6 +30,7 @@ body,html {
   width: 100%;
   position: relative;
   margin-bottom: 50px; /* Ajusta el margen para que el contenido siguiente sea visible */
+
 }
 
 /* PRIMER TITULO */
@@ -496,12 +496,12 @@ h4{
   background: var(--clr-black);
   padding: 20px;
   color: var(--clr-primary);
-  position: fixed;
+  position: fixed; /* Asegura que el menú sea parte del flujo normal */
   width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+#background-section{
+  margin-top: 80px; /* Ajustar según la altura del menú */
 }
 
 .logo {
