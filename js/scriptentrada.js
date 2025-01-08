@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Redirigir al hacer clic en la nota del baño
   document.getElementById('baño').addEventListener('click', () => {
-    window.location.href = 'https://www.cargo.com'; // Cambia este enlace al que desees
+    window.location.href = 'https://gotdem.cargo.site/notita-2'; // Cambia este enlace al que desees
   });
   // Cerrar el modal del producto cuando se hace clic en la "X" (botón de cierre)
   document.getElementById("botonsalir").addEventListener("click", () => {

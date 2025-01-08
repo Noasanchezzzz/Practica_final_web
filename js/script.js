@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //Redirección al hacer clic en el libro
   $("#book").on("click", () => {
-      window.location.href = "https://www.cargo.com"; 
+      window.location.href = "https://gotdem.cargo.site/notita-1"; 
       
   });
    
