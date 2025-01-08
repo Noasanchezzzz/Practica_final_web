@@ -4,13 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Obtener el botón de encender linterna
   const torchSwitch = document.getElementById("torch-switch");
 
-  // ✅ Evento para redirigir al gameover.html al pulsar el botón
+  //Evento para redirigir al gameover.html al pulsar el botón
   torchSwitch.addEventListener("click", () => {
-      localStorage.setItem("playScareVideo", "true"); // Marca que el video debe reproducirse
-      window.location.href = "gameover.html"; // Redireccionar al gameover.html
+      localStorage.setItem("playScareVideo", "true");
+      window.location.href = "gameover.html";
   });
 
-  // ✅ Lógica de Drag & Drop (sin cambios, ya que es funcional)
+  //Drag & Drop
   $("#draggable").draggable();
   $("#droppable").droppable({
       drop: function (event, ui) {
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
   });
 
-  // ✅ Redirección al hacer clic en el libro
+  //Redirección al hacer clic en el libro
   $("#book").on("click", () => {
       window.location.href = "https://www.cargo.com"; 
       
@@ -39,8 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
    
 
   
-
-  // ✅ Efecto de luz (Mantiene la transición de imágenes)
+  //Efecto de luz
   const lightEffectImages = ["img/casa_apagada.png", "img/casa.png"];
   const lightEffectElement = document.getElementById("light-effect-image");
   const lightEffectSection = document.getElementById("light-effect-section");
@@ -76,12 +75,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   });
 
-  // ✅ Redirección al hacer clic en la imagen para entrar a "entrada.html"
+
+  //Redirección al hacer clic en la imagen para entrar a "entrada.html"
   lightEffectElement.addEventListener("click", () => {
       window.location.href = "entrada.html";
   });
 
-  // ✅ Efectos finales (sin cambios)
+  //Efectos finales
   const finalEffectElement = document.getElementById("final-effect-image");
   const finalEffectSection = document.getElementById("final-effect-section");
 
@@ -102,35 +102,33 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
+// MENU
 document.addEventListener("DOMContentLoaded", () => {
     const hamburgerMenu = document.getElementById("hamburger-menu");
     const navLinks = document.querySelector(".nav-links");
 
-    // ✅ Configuración de Locomotive Scroll
+    //Configuración de Locomotive Scroll
     const scroll = new LocomotiveScroll({
         el: document.querySelector("[data-scroll-container]"),
         smooth: true
     });
 
-    // ✅ Activar menú hamburguesa
+    //Activar menú hamburguesa
     hamburgerMenu.addEventListener("click", () => {
         navLinks.classList.toggle("active");
     });
 
-    // ✅ Scroll suave para enlaces internos
+    //Scroll suave para enlaces internos
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
             
-            // Verificar si es un enlace interno (comienza con #)
             if (targetId.startsWith("#")) {
-                e.preventDefault(); // Evitar el comportamiento predeterminado
-                scroll.scrollTo(targetId); // Desplazamiento suave con Locomotive Scroll
-                navLinks.classList.remove("active"); // Cerrar menú hamburguesa
+                e.preventDefault();
+                scroll.scrollTo(targetId);
+                navLinks.classList.remove("active"); 
             } else {
-                // Permitir comportamiento normal para enlaces externos
-                navLinks.classList.remove("active"); // Cerrar menú hamburguesa para todos
+                navLinks.classList.remove("active");
             }
         });
     });

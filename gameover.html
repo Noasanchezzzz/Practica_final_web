@@ -1,75 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Has muerto</title>
     <link rel="icon" href="img/flecha.png">
     <link rel="stylesheet" href="https://use.typekit.net/qhm8wqj.css" />
-        <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-        <!-- CUSTOM css -->
-        <link rel="stylesheet" href="css/gameover.css" />
-        <!-- FONTAWESOME -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!-- LOCOMOTIVE -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
-        <!-- TIPOGRAFIAS -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-</head>
-<body>
-  <!-- Video del susto (se mostrará automáticamente) -->
-<div id="torch-modal" style="display: none;">
-  <video id="torch-video" width="100%" autoplay>
-      <source src="img/susto.mp4" type="video/mp4">
-  </video>
-</div>
+    <!-- CUSTOM css -->
+    <link rel="stylesheet" href="css/gameover.css" />
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- LOCOMOTIVE -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
+    <!-- TIPOGRAFIAS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  </head>
+  <body>
+  <!-- VIDEO DEL SUSTO -->
+  <div id="torch-modal" style="display: none;">
+    <video id="torch-video" width="100%" autoplay>
+        <source src="img/susto.mp4" type="video/mp4">
+    </video>
+  </div>
 
-<!-- Mensaje "Has muerto" -->
-<div id="gameover-container" style="display: none;">
-  <h1 id="message">¡Has muerto!</h1>
-</div>
+  <!-- HAS MUERTO -->
+  <div id="gameover-container" style="display: none;">
+    <h1 id="message">¡Has muerto!</h1>
+  </div>
 
-<!-- Modal del Producto -->
-<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <!-- Botón de cierre con la clase 'close' -->
-        <span class="close" id="closeproduct">&times;</span>
-      </div>
-      <div class="modal-body">
-        <div class="container-fluid product-detail-section">
-          <div class="row">
-            <div class="col-md-6">
-              <div id="modelViewerContainer">
-                <model-viewer src="assets/models/camiseta3_asesino.glb" alt="Modelo 3D" auto-rotate camera-controls></model-viewer>
-              </div>
-            </div>
-
-            <!-- Columna de información del producto -->
-            <div class="col-md-6">
-              <div class="product-info">
-                <h3>Screamer</h3>
-                <p class="text-muted">Referencia: Negro 3333/333</p>
-                <p>Camiseta relaxed-fit. Cuello redondo, manga corta y de color negro.
-                  ¿Te has asustado?, te pasa por no hacer caso a las señales.</p>
-                <h4>28,99€</h4>
-                <div class="size-selection">
-                  <label for="size" class="form-label">Selecciona tu talla:</label>
-                  <div class="btn-group" role="group" aria-label="Size Selection">
-                    <button type="button" class="btn btn-outline-secondary" data-size="XS">XS</button>
-                    <button type="button" class="btn btn-outline-secondary" data-size="S">S</button>
-                    <button type="button" class="btn btn-outline-secondary" data-size="M">M</button>
-                    <button type="button" class="btn btn-outline-secondary" data-size="L">L</button>
-                    <button type="button" class="btn btn-outline-secondary" data-size="XL">XL</button>
-                  </div>
+  <!-- Modal del Producto -->
+  <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- Botón de cierre con la clase 'close' -->
+          <span class="close" id="closeproduct">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid product-detail-section">
+            <div class="row">
+              <div class="col-md-6">
+                <div id="modelViewerContainer">
+                  <model-viewer src="assets/models/camiseta3_asesino.glb" alt="Modelo 3D" auto-rotate camera-controls></model-viewer>
                 </div>
-                <button class="btn btn-custom mt-3">Añadir al carrito</button>
-                <div class="mt-4">
-                  <h5>Reseñas</h5>
-                  <p><strong>★★★★★</strong> 5 de 5 estrellas (200 reseñas)</p>
+              </div>
+              <div class="col-md-6">
+                <div class="product-info">
+                  <h3>Screamer</h3>
+                  <p class="text-muted">Referencia: Negro 3333/333</p>
+                  <p>Camiseta relaxed-fit. Cuello redondo, manga corta y de color negro.
+                    ¿Te has asustado?, te pasa por no hacer caso a las señales.</p>
+                  <h4>28,99€</h4>
+                  <div class="size-selection">
+                    <label for="size" class="form-label">Selecciona tu talla:</label>
+                    <div class="btn-group" role="group" aria-label="Size Selection">
+                      <button type="button" class="btn btn-outline-secondary" data-size="XS">XS</button>
+                      <button type="button" class="btn btn-outline-secondary" data-size="S">S</button>
+                      <button type="button" class="btn btn-outline-secondary" data-size="M">M</button>
+                      <button type="button" class="btn btn-outline-secondary" data-size="L">L</button>
+                      <button type="button" class="btn btn-outline-secondary" data-size="XL">XL</button>
+                    </div>
+                  </div>
+                  <button class="btn btn-custom mt-3">Añadir al carrito</button>
+                  <div class="mt-4">
+                    <h5>Reseñas</h5>
+                    <p><strong>★★★★★</strong> 5 de 5 estrellas (200 reseñas)</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -78,21 +77,17 @@
       </div>
     </div>
   </div>
-</div>
-<!-- jQuery UI y archivo JS -->
-                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-                <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-           
-                <!-- MODELO 3D -->
-                <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-                <!-- LOCOMOTIVE -->
-                <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
-                <!-- Bootstrap Bundle JS (incluye Popper.js) -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-           
-           
-                <!-- MI JS -->
-                <script src="js/gameover.js"></script>
-           </body>
-           </html>
-           
+  <!-- jQuery UI y archivo JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>    
+  <!-- MODELO 3D -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  <!-- LOCOMOTIVE -->
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- MI JS -->
+  <script src="js/gameover.js"></script>
+  </body>
+  </html>
+            

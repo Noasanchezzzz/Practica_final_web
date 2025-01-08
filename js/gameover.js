@@ -7,9 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const productModalElement = document.getElementById("productModal");
     const closeButton = document.getElementById("closeproduct");
 
-    // Solo se ejecuta si venimos desde index.html (linterna encendida)
     if (localStorage.getItem("playScareVideo") === "true") {
-        localStorage.removeItem("playScareVideo"); // Evitar que se repita
+        localStorage.removeItem("playScareVideo");
 
         // Mostrar el video y reproducirlo
         torchModal.style.display = "flex";
@@ -31,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
     }
 
-    // ✅ Cerrar modal y redirigir a un enlace externo al hacer clic en la "X"
+    // Cerrar modal y redirigir a un enlace externo al hacer clic en la "X"
     closeButton.addEventListener("click", () => {
         window.location.href = "https://gotdem.cargo.site/";
     });

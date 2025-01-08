@@ -8,7 +8,7 @@
         <link rel="icon" href="img/flecha.png">
         <link rel="stylesheet" href="https://use.typekit.net/qhm8wqj.css" />
         <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- CUSTOM css -->
         <link rel="stylesheet" href="css/style.css" />
         <!-- FONTAWESOME -->
@@ -21,42 +21,40 @@
         
     </head>
     <body>
+    <!-- menu     -->
+    <nav class="navbar">
+        <div class="logo">Gotdem</div>
+            <ul class="nav-links">
+                <li><a href="#linterna">Do not cross</a></li>
+                <li><a href="#light-effect-section">Chandelier</a></li>
+                <li><a href="#final-effect-section">Screamer</a></li>
+                <li><a href="https://gotdem.cargo.site/" target="_blank" rel="noopener noreferrer">Investigar</a></li>
+            </ul>
+        <!-- Botón de menú hamburguesa -->
+        <div class="hamburger" id="hamburger-menu">
+            ☰
+        </div>
+    </nav>
+    <!-- Primera parte -->
+    <div data-scroll-container>
+        <section id="background-section">
+            <section id="espacio1"></section>
+            <section id="estaanocheciendo">
+                <h1>Está anocheciendo en Gotdem...</h1>
+            </section>
 
-            <nav class="navbar">
-                <div class="logo">Gotdem</div>
-                <ul class="nav-links">
-                    <li><a href="#linterna">Do not cross</a></li>
-                    <li><a href="#light-effect-section">Chandelier</a></li>
-                    <li><a href="#final-effect-section">Screamer</a></li>
-                    <li><a href="https://gotdem.cargo.site/" target="_blank" rel="noopener noreferrer">Investigar</a></li>
-
-
-                </ul>
-                <!-- Botón de menú hamburguesa -->
-                <div class="hamburger" id="hamburger-menu">
-                    ☰
+            <section id="arboles" data-scroll-container>
+                <div class="arboles1" data-scroll data-scroll-direction="horizontal" data-scroll-speed="3">
+                    <img src="img/ARBOL2.png" alt="árbol 2" class="arbol" style="transform: translate(0px, 50px); z-index: 3;">
+                    <img src="img/ARBOL5.png" alt="árbol 5" class="arbol" style="transform: translate(-250px, 50px); z-index: 2;">
+                    <img src="img/ARBOL1.png" alt="árbol 1" class="arbol" style="transform: translate(-500px, 50px); z-index: 1;">
                 </div>
-            </nav>
-            <div data-scroll-container>
-            <section id="background-section">
-                <section id="espacio1">
-                </section>
-                <section id="estaanocheciendo">
-                    <h1>Está anocheciendo en Gotdem...</h1>
-                </section>
-
-                <section id="arboles" data-scroll-container>
-                    <div class="arboles1" data-scroll data-scroll-direction="horizontal" data-scroll-speed="3">
-                        <img src="img/ARBOL2.png" alt="árbol 2" class="arbol" style="transform: translate(0px, 50px); z-index: 3;">
-                        <img src="img/ARBOL5.png" alt="árbol 5" class="arbol" style="transform: translate(-250px, 50px); z-index: 2;">
-                        <img src="img/ARBOL1.png" alt="árbol 1" class="arbol" style="transform: translate(-500px, 50px); z-index: 1;">
-                    </div>
-                    <div class="arboles1" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-3">
-                        <img src="img/ARBOL4.png" alt="árbol 4" class="arbol" style="transform: translate(0px, 50px); z-index: 3;">
-                        <img src="img/ARBOL3.png" alt="árbol 3" class="arbol" style="transform: translate(-150px, 50px); z-index: 2;">
-                        <img src="img/ARBOL6.png" alt="árbol 6" class="arbol" style="transform: translate(-300px, 50px); z-index: 1;">
-                    </div>
-                </section>
+                <div class="arboles1" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-3">
+                    <img src="img/ARBOL4.png" alt="árbol 4" class="arbol" style="transform: translate(0px, 50px); z-index: 3;">
+                    <img src="img/ARBOL3.png" alt="árbol 3" class="arbol" style="transform: translate(-150px, 50px); z-index: 2;">
+                    <img src="img/ARBOL6.png" alt="árbol 6" class="arbol" style="transform: translate(-300px, 50px); z-index: 1;">
+                </div>
+            </section>
                 
                 <div id="direction" data-scroll-container>
                     <div class="c-direction-block_item -two">
@@ -80,47 +78,47 @@
                         </span>
                     </div>
                 </div>
-                <section id="teequivocaste">
-                    <h2>Te equivocaste al pasar...</h2>
-                </section>
-                <section id="huellas" data-scroll-container >
-                    <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible"> 
-                        <img src="img/huella.png" alt="huellas" class="huella">
-                    </div>
-                    <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible">
+
+            <section id="teequivocaste">
+                <h2>Te equivocaste al pasar...</h2>
+            </section>
+
+            <section id="huellas" data-scroll-container >
+                <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible"> 
+                    <img src="img/huella.png" alt="huellas" class="huella">
+                </div>
+                <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible">
                     <img src="img/huella.png" alt="huellas" class="huella1">
+                </div>
+                <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible">
+                    <img src="img/huella.png" alt="huellas" class="huella2">
+                </div>
+                <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible">
+                    <img src="img/huella.png" alt="huellas" class="huella3">
+                    <div class="huella-text">¡¿Que ha sido eso?!</div>
+                </div>
+                <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible">
+                    <img src="img/huella.png" alt="huellas" class="huella4">
+                </div>
+                <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible">
+                    <img src="img/huella.png" alt="huellas" class="huella5">
+                </div>
+                <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible">
+                    <img src="img/huella.png" alt="huellas" class="huella6">
+                </div>
+            </section>
+
+            <section id="linterna">
+                <div id="draggable" class="ui-widget-content"></div>   
+                <div id="droppable" class="ui-widget-header">
+                    <div id="droppedImage">
+                        <img src="img/nota.png" alt="nota" id="book">
+                        <img src="img/camiseta.png" alt="camiseta" id="tshirt" data-bs-toggle="modal" data-bs-target="#productModal">
                     </div>
-                    <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible">
-                        <img src="img/huella.png" alt="huellas" class="huella2">
-                    </div>
-                    <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible">
-                        <img src="img/huella.png" alt="huellas" class="huella3">
-                        <div class="huella-text">¡¿Que ha sido eso?!</div>
-                    </div>
-                    <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible">
-                        <img src="img/huella.png" alt="huellas" class="huella4">
-                    </div>
-                    <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible">
-                        <img src="img/huella.png" alt="huellas" class="huella5">
-                    </div>
-                    <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible">
-                        <img src="img/huella.png" alt="huellas" class="huella6">
-                    </div>
-                </section>
-                <section id="linterna">
-                    <div id="draggable" class="ui-widget-content">
-                    </div>
-                    
-                    <div id="droppable" class="ui-widget-header">
-                        <!-- Imagen que aparecerá poco a poco -->
-                        <div id="droppedImage">
-                            <img src="img/nota.png" alt="nota" id="book">
-                            <img src="img/camiseta.png" alt="camiseta" id="tshirt" data-bs-toggle="modal" data-bs-target="#productModal">
-                        </div>
-                    </div>
-                    
-                </section >
-            </section>  
+                </div>     
+            </section>
+        </section> 
+            <!-- Segunda parte --> 
             <section id="arboles" data-scroll-container>
                 <div class="arboles1" data-scroll data-scroll-direction="horizontal" data-scroll-speed="3">
                     <img src="img/ARBOL2.png" alt="árbol 2" class="arbol" style="transform: translate(0px, 50px); z-index: 3;">
@@ -158,13 +156,14 @@
                 </div>
             </section>
             <section id="light-effect-section">
-            <div id="light-effect-section" class="section light-effect-section">
-                <div class="light-effect-container">
-                  <img id="light-effect-image" src="img/casa_apagada.png" alt="Efecto de luz">
+                <div id="light-effect-section" class="section light-effect-section">
+                    <div class="light-effect-container">
+                        <img id="light-effect-image" src="img/casa_apagada.png" alt="Efecto de luz">
+                    </div>
+                        <h4>Si eres tan valiente entra en la casa</h4>
                 </div>
-                <h4>Si eres tan valiente entra en la casa</h4>
-              </div>
             </section>
+            <!-- Tercera parte -->
             <section id="huellas" data-scroll-container>
                 <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible"> 
                     <img src="img/huella.png" alt="huellas" class="huella">
@@ -189,84 +188,71 @@
                     <img src="img/huella.png" alt="huellas" class="huella6">
                 </div>
             </section>
-<!-- Sección final con la imagen de la persona -->
-<section id="final-effect-section">
-<div id="final-effect-section">
-    <img id="final-effect-image" src="img/personafondo.png" alt="Efecto final">
-    
-    <!-- Interruptor de linterna -->
-    <button id="torch-switch" class="btn-torch-switch">Enciende la linterna</button>
-</div>
-        </div>
-            
-<!-- Modal del Producto -->
-<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <!-- Botón de cierre con la clase 'close' -->
-          <span class="close" id="closeproduct">&times;</span>
-        </div>
-        <div class="modal-body">
-          <div class="container-fluid product-detail-section">
-            <div class="row">
-              <div class="col-md-6">
-                <div id="modelViewerContainer">
-                    <model-viewer src="assets/models/tshirt1.glb" alt="Modelo 3D" auto-rotate camera-controls></model-viewer>
 
+            <section id="final-effect-section">
+                <div id="final-effect-section">
+                    <img id="final-effect-image" src="img/personafondo.png" alt="Efecto final">
+                    <button id="torch-switch" class="btn-torch-switch">Enciende la linterna</button>
                 </div>
-              </div>
-  
-              <!-- Columna de información del producto -->
-              <div class="col-md-6">
-                <div class="product-info">
-                  <h3>Do Not Cross</h3>
-                  <p class="text-muted">Referencia: Negro 5644/303</p>
-                  <p>Camiseta relaxed-fit. Cuello redondo, manga corta de color negro. Con nuestra seña de identidad "DO NOT CROSS" y "DEMON INSIDE"</p>
-                  <h4>28,99€</h4>
-                  <div class="size-selection">
-                    <label for="size" class="form-label">Selecciona tu talla:</label>
-                    <div class="btn-group" role="group" aria-label="Size Selection">
-                      <button type="button" class="btn btn-outline-secondary" data-size="XS">XS</button>
-                      <button type="button" class="btn btn-outline-secondary" data-size="S">S</button>
-                      <button type="button" class="btn btn-outline-secondary" data-size="M">M</button>
-                      <button type="button" class="btn btn-outline-secondary" data-size="L">L</button>
-                      <button type="button" class="btn btn-outline-secondary" data-size="XL">XL</button>
-                    </div>
-                  </div>
-                  <button class="btn btn-custom mt-3">Añadir al carrito</button>
-                  <div class="mt-4">
-                    <h5>Reseñas</h5>
-                    <p><strong>★★★★☆</strong> 4.5 de 5 estrellas (100 reseñas)</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+            </section>
     </div>
-  </div>
+            
+    <!-- Modal del Producto -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" id="closeproduct">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid product-detail-section">
+                    <div class="row">
+                        <div class="col-md-6">
+                        <div id="modelViewerContainer">
+                            <model-viewer src="assets/models/tshirt1.glb" alt="Modelo 3D" auto-rotate camera-controls></model-viewer>
+                        </div>
+                        </div>
   
-        
-    <footer>
-    </footer>
+                        <div class="col-md-6">
+                        <div class="product-info">
+                            <h3>Do Not Cross</h3>
+                            <p class="text-muted">Referencia: Negro 5644/303</p>
+                            <p>Camiseta relaxed-fit. Cuello redondo, manga corta de color negro. Con nuestra seña de identidad "DO NOT CROSS" y "DEMON INSIDE"</p>
+                            <h4>28,99€</h4>
+                        <div class="size-selection">
+                            <label for="size" class="form-label">Selecciona tu talla:</label>
+                        <div class="btn-group" role="group" aria-label="Size Selection">
+                            <button type="button" class="btn btn-outline-secondary" data-size="XS">XS</button>
+                            <button type="button" class="btn btn-outline-secondary" data-size="S">S</button>
+                            <button type="button" class="btn btn-outline-secondary" data-size="M">M</button>
+                            <button type="button" class="btn btn-outline-secondary" data-size="L">L</button>
+                            <button type="button" class="btn btn-outline-secondary" data-size="XL">XL</button>
+                        </div>
+                        </div>
+                            <button class="btn btn-custom mt-3">Añadir al carrito</button>
+                        <div class="mt-4">
+                            <h5>Reseñas</h5>
+                            <p><strong>★★★★☆</strong> 4.5 de 5 estrellas (100 reseñas)</p>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </div>
+    </div>
+    
         <!-- jQuery UI y archivo JS -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-
         <!-- MODELO 3D -->
         <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
         <!-- LOCOMOTIVE -->
         <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
-        <!-- Bootstrap Bundle JS (incluye Popper.js) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-
+        <!-- Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
         <!-- MI JS -->
         <script src="js/script.js"></script>
-
-
-
     </body>
 </html>

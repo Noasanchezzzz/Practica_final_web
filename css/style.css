@@ -18,8 +18,8 @@ body,html {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-color: var(--background); /* Color de fondo */
-  overflow: auto; /* Esto permite hacer scroll */
+  background-color: var(--background);
+  overflow: auto; /*para el scroll */
 }
 
 body > div:nth-child(2){
@@ -33,6 +33,53 @@ body > div:nth-child(2){
 
 }
 
+/* MENÚ */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--clr-black);
+  padding: 20px;
+  color: var(--clr-primary);
+  position: fixed; /* Asegura que el menú sea parte del flujo normal */
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+#background-section{
+  margin-top: 80px;
+}
+.logo {
+  font-family: var(--ff-title);
+  font-size: 28px;
+  color: var(--clr-primary);
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: var(--clr-primary);
+  font-size: 18px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+.nav-links a:hover {
+  color: var(--clr-white);
+  transform: scale(1.1);
+}
+.hamburger {
+  display: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: var(--clr-primary);
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+.hamburger:hover {
+  color: var(--clr-white);
+  transform: scale(1.2);
+}
+
 /* PRIMER TITULO */
 h1 {
   font-family: var(--ff-title);
@@ -40,7 +87,7 @@ h1 {
   position: absolute;
   font-size: 30px;
   right: 20px;
-  top: 200px; /* Ajustamos su alineación superior */
+  top: 200px;
 }
 #espacio1{
   height: 75vh;
@@ -56,40 +103,33 @@ h1 {
   position: relative;
   height: 100vh;
 }
-
-/* Cada contenedor de árboles */
 .arboles1 {
   display: flex;
   align-items: center;
-  width: 100vh; /* Cada grupo ocupa la mitad del ancho del contenedor */
+  width: 100vh;
 }
-
-/* Estilo de las imágenes de los árboles */
 .arboles1 img {
-  width: auto; /* Mantén la proporción de la imagen */
+  width: auto; 
   height: 90vh; /* Altura fija para que los árboles tengan tamaños uniformes */
   display: block;
-  transition: transform 0.3s ease; /* Efecto suave en cambios de posición */
+  transition: transform 0.3s ease;
 }
-
-
-
 
 
 /* LOCOMOTIVE */
 [data-scroll-container] {
-  overflow: visible; /* Cambia a visible si necesitas ajustes */
+  overflow: visible;
   position: relative;
-  height: auto; /* Asegúrate de que la altura sea dinámica */
+  height: auto; /* altura */
 }
 
+/* NO PASAR */
 .c-direction-block_item {
   width: 100vw; /* Ocupa todo el ancho de la pantalla */
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .c-direction-block_item_inner {
   white-space: nowrap; /* Asegura que el texto no se divida en líneas */
   font-size: 10vw;
@@ -103,26 +143,21 @@ h1 {
   right: 0;
   z-index: 1;
 }
-
 .c-direction-block_item.-two {
   top: 45%;
 }
-
 .c-direction-block_item.-three {
   top: 50%;
   transform: rotate(9deg);
 }
-
 .c-direction-block_item.-four {
   top: 70%;
   transform: translateX(10vw) rotate(-19deg);
 }
-
 .c-direction-block_item.-five {
   top: 63%;
   transform: translateX(50vh) rotate(3deg);
 }
-
 .c-direction-block_item span {
   background-color:var(--clr-primary);
   display: block;
@@ -132,12 +167,13 @@ h1 {
 .has-scroll-smooth [data-scroll-container] {
   min-height: 0vh !important;
 }
+
 /* SEGUNDO TITULO */
 #teequivocaste{
   position: relative;
-    display: flex;
-    height: 250px;
-    margin-top: 200px;
+  display: flex;
+  height: 250px;
+  margin-top: 200px;
 }
 h2 {
   font-family: var(--ff-title);
@@ -147,6 +183,7 @@ h2 {
   right: 20px;
 }
 
+/* HUELLAS */
 #huellas {
   gap: 30px;
   position: relative;
@@ -157,66 +194,60 @@ h2 {
   overflow: hidden; /* Ocultar las huellas que salen del viewport */
 }
 .huella-container {
-  position: relative; /* Establecer el contenedor con posición relativa */
+  position: relative;
   display: flex;
   justify-content: center;
   opacity: 0; /* Se mantiene invisible hasta que esté en vista */
   transform: translateY(50px); /* Desplazamiento inicial */
-  transition: opacity 0.9s ease, transform 0.4s ease; /* Animación */
+  transition: opacity 0.9s ease, transform 0.4s ease;
 }
 .huella-container.is-visible {
   opacity: 1;  /* Hace visibles las huellas y el texto */
   transform: translateY(0); /* Las mueve a su posición original */
 }
-
 .huella-text {
   position: absolute;
-  left: -250%;  /* Posiciona el texto al lado de las huellas */
-  top: 50%;  /* Centra el texto verticalmente */
-  transform: translateY(-50%);  /* Ajuste fino para centrar el texto */
+  left: -250%;
+  top: 50%;
+  transform: translateY(-50%);
   text-align: left;
   white-space: nowrap;
-  max-width: 200px;  /* Ajusta el ancho máximo si el texto es largo */
+  max-width: 200px;
   font-family: var(--ff-title);
   color: var(--clr-secondary);
   position: absolute;
   font-size: 25px;
 }
-
-
-
-
 .huella {
-  width: 120px; /* Tamaño de las huellas */
+  width: 120px;
 }
-
 .huella1 {
-  width: 120px; /* Tamaño de las huellas */
-  transform: translateX(80px) rotate(344deg); /* Zigzag a la derecha */
+  width: 120px;
+  transform: translateX(80px) rotate(344deg);
 }
 .huella2{
-  width: 120px; /* Tamaño de las huellas */
-  transform: translateX(160px) rotate(352deg); /* Zigzag a la izquierda */
+  width: 120px;
+  transform: translateX(160px) rotate(352deg);
 }
 .huella3{
-  width: 120px; /* Tamaño de las huellas */
-  transform: translateX(160px) rotate(12deg); /* Zigzag a la izquierda */
+  width: 120px;
+  transform: translateX(160px) rotate(12deg);
 }
 .huella4{
-  width: 120px; /* Tamaño de las huellas */
-  transform: translateX(120px) rotate(34deg); /* Zigzag a la izquierda */
+  width: 120px;
+  transform: translateX(120px) rotate(34deg);
 }
 .huella5{
-  width: 120px; /* Tamaño de las huellas */
-  transform: translateX(50px) rotate(35deg); /* Zigzag a la izquierda */
+  width: 120px;
+  transform: translateX(50px) rotate(35deg);
 }
 .huella6{
-  width: 120px; /* Tamaño de las huellas */
-  transform: translateX(0px) rotate(16deg); /* Zigzag a la izquierda */
+  width: 120px;
+  transform: translateX(0px) rotate(16deg);
 }
 
 
-/* Estilo para el área de arrastre */
+/* LINTERNA */
 #linterna{
   display: flex;
   flex-direction: column;
@@ -234,25 +265,22 @@ h2 {
   display:flex !important;
   color: var(--clr-primary);
 }#draggable:hover {
-  transform: scale(1.1); /* Aumenta el tamaño en un 10% */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+  transform: scale(1.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-/* Estilo para el área de drop */
+/* DROP */
 #droppable {
   width: 600px;
   height: 600px;
   float: left;
-  background-color: black; /* Fondo negro */
+  background-color: var(--clr-black);
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   color: var(--clr-primary);
 }
-
-/* Imagen contenedor */
 #droppedImage {
   display: none; /* Inicialmente oculta */
   width: 600px;
@@ -262,49 +290,32 @@ h2 {
   background-position: center;
   position: relative;
 }
-/* Estilo para el libro */
+
+/* LIBRO */
 #book {
   position: absolute;
-  width: 80px; /* Ajusta el tamaño del libro */
+  width: 80px;
   cursor: pointer;
 }
+#book:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
 
-/* Estilo para la camiseta */
+/* CAMISETA */
 #tshirt {
   position: absolute;
-  width: 90px; /* Ajusta el tamaño de la camiseta */
+  width: 90px;
   cursor: pointer;
 }
-
-/* Hover Zoom In para libro */
-#book:hover {
-  transform: scale(1.05); /* Aumenta el tamaño al 120% */
-  transition: transform 0.3s ease-in-out; /* Transición suave */
-}
-
-/* Hover Zoom In para camiseta */
 #tshirt:hover {
-  transform: scale(1.05); /* Aumenta el tamaño al 120% */
-  transition: transform 0.3s ease-in-out; /* Transición suave */
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
 }
+
+/* MODAL PRODUCTO */
 #productModal{
   background-color: var(--clr-secondary);
-}
-.close {
-  position: absolute;
-  right: 30px;
-  color: white;
-  font-size: 35px;
-  font-weight: bold;
-  cursor: pointer;
-  top: 0;
-}
-
-.close:hover,
-.close:focus {
-  color: red;
-  text-decoration: none;
-  cursor: pointer;
 }
 .modal-backdrop.show {
   opacity: 0
@@ -346,11 +357,33 @@ h2 {
   font-family: Inconsolata;
   color: var(--clr-primary);
 }
+.product-info h3 {
+  font-family: var(--ff-title);
+  color: var(--clr-primary);
+  font-size: 25px;
+}
+h4{
+  font-family: var(--ff-title);
+  color: var(--clr-secondary);
+  font-size: 25px;
+}
 
 /* Visor 3D */
 #modelViewerContainer > model-viewer {
   height: 400px;
   max-height: 400px;
+}
+.product-detail-section {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+}
+.col-md-6 {
+  flex: 0 0 auto;
+  width: 50%;
+}
+.product-info .mt-4 h5 {
+  font-size: 20px;
 }
 
 /* Estilos del botón */
@@ -363,56 +396,50 @@ h2 {
   font-size: 16px;
   border-radius: 0 !important;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  
 }
-
 .btn-custom:hover {
   background-color: var(--clr-black);
   transform: scale(1.05);
   color: var(--clr-primary);
 }
-/* Cambiar el color de fondo de los botones */
 .btn-outline-secondary {
-  background-color: var(--clr-primary); /* Color de fondo normal */
+  background-color: var(--clr-primary);
   font-family: var(--ff-body);
-  color: var(--clr-black); /* Color de texto */
-  border: 1px solid var(--clr-black); /* Color del borde */
-  border-radius: 0; /* Elimina los bordes redondeados */
+  color: var(--clr-black);
+  border: 1px solid var(--clr-black);
+  border-radius: 0;
 }
-
-/* Cambiar el color de fondo cuando pasas el cursor sobre el botón (hover) */
 .btn-outline-secondary:hover {
-  background-color: var(--clr-black); /* Color de fondo en hover */
-  color: var(--clr-primary); /* Color de texto en hover */
-  border-color: rgba(255, 255, 255, 0); /* Color del borde en hover */
+  background-color: var(--clr-black);
+  color: var(--clr-primary);
+  border-color: rgba(255, 255, 255, 0);
+}
+.close {
+  position: absolute;
+  right: 30px;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  top: 0;
+}
+.close:hover,
+.close:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-/* Diseño principal */
-.product-detail-section {
-  display: flex;
-  justify-content: space-around;
-  gap: 30px;
-}
-
-/* Columnas para el modelo 3D y la info */
-.col-md-6 {
-  flex: 0 0 auto;
-  width: 50%;
-}
-
-.product-info .mt-4 h5 {
-  font-size: 20px;
-}/* ESCENARIO CASA */
+/* ESCENARIO CASA */
 #light-effect-section {
   position: relative;
   width: 100%;
-  height: 90vh; /* Ocupa la pantalla completa */
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column-reverse;
 }
-
 .light-effect-container {
   position: relative;
   width: 100%;
@@ -420,24 +447,16 @@ h2 {
   justify-content: center;
   align-items: center;
 }
-
 #light-effect-image {
-  width: 600px; /* Ajusta el tamaño de la imagen */
+  width: 600px;
   height: 600px;
-  opacity: 0; /* Inicialmente invisible */
-  transition: opacity 0.5s ease-in-out; /* Transición suave para opacidad */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
   cursor: pointer;
 }
-.product-info h3 {
-  font-family: var(--ff-title);
-  color: var(--clr-primary);
-  font-size: 25px;
-}
-h4{
-  font-family: var(--ff-title);
-  color: var(--clr-secondary);
-  font-size: 25px;
-}#final-effect-section {
+
+/* ESCENARIO PERSONA */
+#final-effect-section {
   gap: 30px;
   width: 100%;
   height: 90vh;
@@ -446,14 +465,14 @@ h4{
   align-items: center;
   flex-direction: column-reverse;
 }
-
 #final-effect-image {
-  width: 600px; /* Ajusta el tamaño de la imagen */
+  width: 600px;
   height: 600px;
   opacity: 0; /* Inicialmente invisible */
-  transition: opacity 0.5s ease-in-out; /* Transición suave para opacidad */
+  transition: opacity 0.5s ease-in-out;
 }
-/* Estilo para el interruptor de linterna */
+
+/* INTERRUPTOR LINTERNA */
 .btn-torch-switch {
   background-color: var(--clr-primary);
   font-family: var(--ff-body);
@@ -465,148 +484,31 @@ h4{
   transition: background-color 0.3s ease, transform 0.2s ease;
   cursor: pointer;
 }
-
 .btn-torch-switch:hover {
   background-color: var(--clr-black);
   transform: scale(1.05);
   color: var(--clr-primary);
 }
-
 #modelViewerContainer{
   display: flex;
   justify-content: center;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-/* Menú de navegación principal */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--clr-black);
-  padding: 20px;
-  color: var(--clr-primary);
-  position: fixed; /* Asegura que el menú sea parte del flujo normal */
-  width: 100%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-#background-section{
-  margin-top: 80px; /* Ajustar según la altura del menú */
-}
-
-.logo {
-  font-family: var(--ff-title);
-  font-size: 28px;
-  color: var(--clr-primary);
-}
-
-/* ✅ Estilo de los enlaces con hover */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: var(--clr-primary);
-  font-size: 18px;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-
-/* ✅ Efecto hover solo en los enlaces del menú */
-.nav-links a:hover {
-  color: var(--clr-white);
-  transform: scale(1.1);
-}
-
-/* ✅ Estilo del icono de hamburguesa con hover */
-.hamburger {
-  display: none;
-  font-size: 32px;
-  cursor: pointer;
-  color: var(--clr-primary);
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.hamburger:hover {
-  color: var(--clr-white);
-  transform: scale(1.2);
-}
-
-/* ✅ Media Query para hacerlo responsive */
-@media screen and (max-width: 768px) {
-  .hamburger {
-      display: block;
-  }
-
-  .nav-links a {
-      padding: 15px;
-  }
-
-}
-
-
-@media screen and (max-width: 768px) {
-  .nav-links.active {
-      display: flex;
-      align-items: flex-end;
-      height: 180px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .nav-links {
-      display: none;
-      flex-direction: column;
-      background: var(--clr-black);
-      width: 100%;
-      position: absolute;
-      top: 80px;
-      left: 0;
-      height: 120px;
-      text-align: center;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* MEDIA QUERY */
-/* General: Ajusta el diseño para pantallas pequeñas */
+/* GRANDE */
 @media (max-width: 1024px) {
   #background-section {
     background-position: center center;
     background-size: cover;
   }
-
   #huellas {
-    height: 125vh; /* Ajusta la altura automáticamente */
-    gap: 20px; /* Reduce el espacio entre huellas */
+    height: 125vh; 
+    gap: 20px;
   }
 }
+
+/* TABLET */
 @media (max-width: 842px) {
   .row{
     display: flex;
@@ -630,35 +532,54 @@ h4{
     margin-bottom: 0;
   }.mt-3 {
     margin-top: 0.5rem !important;
-}
-.mt-4 {
-  margin-top: 1rem !important;
-}
-.container{
-  width: 300px;
+  }
+  .mt-4 {
+    margin-top: 1rem !important;
+  }
+  .container{
+    width: 300px;
     height: 300px;
-}
-#modelViewerContainer > model-viewer {
-  height: 300px; /* Ajusta el visor 3D */
-  width: 300px;
-  max-height: 100%;
-}
+  }
+  #modelViewerContainer > model-viewer {
+    height: 300px; /* Ajusta el visor 3D */
+    width: 300px;
+    max-height: 100%;
+  }
 }
 
-/* Para ipad */
 @media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: var(--clr-black);
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    height: 120px;
+    text-align: center;
+  }
+  .nav-links.active {
+    display: flex;
+    align-items: flex-end;
+    height: 180px;
+  }
+  .hamburger {
+    display: block;
+  }
+  .nav-links a {
+    padding: 15px;
+  }
   .product-info h3{
     margin-bottom: 0;
     margin-left: 0;
   }
   #background-section {
-    margin-bottom: 20px; /* Reduce el margen */
+    margin-bottom: 20px;
   }
-
   h1,h2,h3 {
     margin-left: 20px;
   }
-
   #huellas {
     gap: 15px;
   }
@@ -666,7 +587,6 @@ h4{
     width: 250px;
     height: 100px;
   }
-
   #droppable {
     width: 450px;
     height: 450px;
@@ -688,17 +608,16 @@ h4{
     left: 89px !important;
   }
   #droppedImage img {
-    width: 50px; /* Ajusta el tamaño de los ítems */
+    width: 50px;
   }
-
   #modelViewerContainer > model-viewer {
     height: 300px; /* Ajusta el visor 3D */
     width: 300px;
     max-height: 100%;
-  }.modal-body {
+  }   
+  .modal-body {
     padding: 10px;
   }
-
   .btn-custom {
     font-size: 14px;
     padding: 8px 16px;
@@ -711,20 +630,23 @@ h4{
     height: 450px;
   }
   #light-effect-section {
-    height: 70vh; /* Ocupa la pantalla completa */
+    height: 70vh;
   }
   #final-effect-section{
-    height: 70vh; /* Ocupa la pantalla completa */
+    height: 70vh;
   }
 }
+
+/* TABLET PEQUEÑA */
 @media (max-width: 576px) {
   .modal-dialog {
-      max-width: 800px !important;
-      margin-right: auto;
-      margin-left: auto;
+    max-width: 800px !important;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
-/* Para pantallas aún más pequeñas */
+
+/* MOVIL */
 @media (max-width: 480px) {
   h1,h2,h3 {
     margin-left: 20px;
@@ -737,7 +659,6 @@ h4{
     width: 250px;
     height: 100px;
   }
-
   #droppable {
     width:350px;
     height: 350px;
@@ -758,7 +679,6 @@ h4{
     top: 235px !important;
     left: 70px !important;
   }
-  
   .huella{
     width: 100px;
   }
@@ -772,18 +692,18 @@ h4{
     height: 350px;
   }
   #light-effect-section {
-    height: 60vh; /* Ocupa la pantalla completa */
+    height: 60vh;
   }
   #final-effect-section{
-    height: 50vh; /* Ocupa la pantalla completa */
+    height: 50vh;
   }
 }
 
 @media (min-width: 576px) {
   .modal-dialog {
-      min-width: 600px;
-      margin-right: auto;
-      margin-left: auto;
+    min-width: 600px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 
