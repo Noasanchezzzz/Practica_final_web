@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // ✅ Botón para volver al index
+    // Botón para volver al index
     const botonsalir = document.getElementById("botonsalir");
     botonsalir?.addEventListener("click", () => {
         window.location.href = "index.html#light-effect-section";
     });
 
-    // ✅ Selección de los modales y configuración con Bootstrap
+    // Selección de los modales y configuración con Bootstrap
     const livingRoomModal = document.getElementById('livingroom-modal');
     const bathroomModal = document.getElementById('bathroom-modal');
     const productModalElement = document.getElementById("productModal");
 
-    // ✅ Apertura y cierre de los modales sin Bootstrap (modales simples)
+    // Apertura y cierre de los modales sin Bootstrap (modales simples)
     document.getElementById('open-livingroom-modal')?.addEventListener('click', () => {
         livingRoomModal.style.display = 'block';
     });
@@ -27,12 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
         bathroomModal.style.display = 'none';
     });
 
-    // ✅ Redirección al hacer clic en la nota del baño
+    // Redirección al hacer clic en la nota del baño
     document.getElementById('baño')?.addEventListener('click', () => {
         window.location.href = 'https://gotdem.cargo.site/notita-2';
     });
 
-    // ✅ Apertura del modal de la camiseta con Bootstrap (modo correcto)
+    // Apertura del modal de la camiseta con Bootstrap (modo correcto)
     const productModal = new bootstrap.Modal(productModalElement);
     const salonImage = document.getElementById("salon");
 
@@ -40,12 +40,12 @@ document.addEventListener("DOMContentLoaded", () => {
         productModal.show();
     });
 
-    // ✅ Cerrar el modal del producto
+    // Cerrar el modal del producto
     document.getElementById('closeproduct')?.addEventListener('click', () => {
         productModal.hide();
     });
 
-    // ✅ Cerrar los modales haciendo clic fuera de ellos
+    // Cerrar los modales haciendo clic fuera de ellos
     window.addEventListener('click', (event) => {
         if (event.target === livingRoomModal) {
             livingRoomModal.style.display = 'none';
