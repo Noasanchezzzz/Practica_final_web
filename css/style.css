@@ -477,9 +477,13 @@ h4{
 #final-effect-image {
   width: 600px;
   height: 600px;
-  opacity: 0; /* Inicialmente invisible */
+  opacity: 0; /* Inicialmente oculta */
   transition: opacity 0.5s ease-in-out;
+  display: block; /* Asegurar que esté visible */
+  position: relative;
+  z-index: 10; /* Asegurar que esté por encima de otros elementos */
 }
+
 
 /* INTERRUPTOR LINTERNA */
 .btn-torch-switch {
