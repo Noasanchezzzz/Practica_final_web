@@ -19,7 +19,7 @@ body,html {
   padding: 0;
   height: 100vh;
   background-color: var(--background); /* Color de fondo */
-  overflow: auto; /* Esto permite hacer scroll */
+  overflow: hidden; /* Esto permite hacer scroll */
 }
 
   

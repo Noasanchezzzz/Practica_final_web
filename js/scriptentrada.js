@@ -1,44 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Abre el modal del salón al hacer clic en la flecha izquierda
-  document.getElementById('open-livingroom-modal').addEventListener('click', () => {
-    document.getElementById('livingroom-modal').style.display = 'block'; // Muestra el modal del salón
-  });
-  // Abre el modal del baño al hacer clic en la flecha derecha
-  document.getElementById('open-bathroom-modal').addEventListener('click', () => {
-    document.getElementById('bathroom-modal').style.display = 'block'; // Muestra el modal del baño
-  });
+  const botonsalir = document.getElementById("botonsalir");
+
+botonsalir.addEventListener("click", () => {
+    window.location.href = "index.html#light-effect-section";
+});
 
 
-  // Cerrar el modal del salón cuando se hace clic en el botón de cerrar
-  document.getElementById('close-livingroom-modal').addEventListener('click', () => {
-    document.getElementById('livingroom-modal').style.display = 'none'; // Oculta el modal del salón
-  });
-  // Cerrar el modal del baño cuando se hace clic en el botón de cerrar
-  document.getElementById('close-bathroom-modal').addEventListener('click', () => {
-    document.getElementById('bathroom-modal').style.display = 'none'; // Oculta el modal del baño
+  // ✅ Apertura y cierre de modales
+  document.getElementById('open-livingroom-modal')?.addEventListener('click', () => {
+      document.getElementById('livingroom-modal').style.display = 'block';
   });
 
-  
-  // Redirigir al hacer clic en la nota del baño
-  document.getElementById('baño').addEventListener('click', () => {
-    window.location.href = 'https://gotdem.cargo.site/notita-2'; // Cambia este enlace al que desees
-  });
-  // Cerrar el modal del producto cuando se hace clic en la "X" (botón de cierre)
-  document.getElementById("botonsalir").addEventListener("click", () => {
-    window.location.href = "index.html"; // Redirige a la página principal
+  document.getElementById('close-livingroom-modal')?.addEventListener('click', () => {
+      document.getElementById('livingroom-modal').style.display = 'none';
   });
 
-  // Selección del modal
-  var modalElement = document.getElementById("productModal");
-  var modal = new bootstrap.Modal(modalElement);
-
-  // Mostrar el modal al hacer clic en la camiseta (elemento con id 'salon')
-  document.getElementById("salon").addEventListener("click", () => {
-      modal.show(); // Muestra el modal
+  document.getElementById('open-bathroom-modal')?.addEventListener('click', () => {
+      document.getElementById('bathroom-modal').style.display = 'block';
   });
 
-  // Cerrar el modal al hacer clic en la "X" (botón de cierre)
-  document.getElementById("closeproduct").addEventListener("click", () => {
-      modal.hide(); // Oculta el modal
+  document.getElementById('close-bathroom-modal')?.addEventListener('click', () => {
+      document.getElementById('bathroom-modal').style.display = 'none';
+  });
+
+  // ✅ Redirección al hacer clic en la nota del baño
+  document.getElementById('baño')?.addEventListener('click', () => {
+      window.location.href = 'https://gotdem.cargo.site/notita-2';
   });
 });

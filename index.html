@@ -21,7 +21,9 @@
         
     </head>
     <body>
-    <!-- menu     -->
+    <!-- Primera parte -->
+    <div data-scroll-container>
+        <!-- menu     -->
     <nav class="navbar">
         <div class="logo">Gotdem</div>
             <ul class="nav-links">
@@ -35,15 +37,13 @@
             ☰
         </div>
     </nav>
-    <!-- Primera parte -->
-    <div data-scroll-container>
         <section id="background-section">
             <section id="espacio1"></section>
             <section id="estaanocheciendo">
                 <h1>Está anocheciendo en Gotdem...</h1>
             </section>
 
-            <section id="arboles" data-scroll-container>
+            <section id="arboles">
                 <div class="arboles1" data-scroll data-scroll-direction="horizontal" data-scroll-speed="3">
                     <img src="img/ARBOL2.png" alt="árbol 2" class="arbol" style="transform: translate(0px, 50px); z-index: 3;">
                     <img src="img/ARBOL5.png" alt="árbol 5" class="arbol" style="transform: translate(-250px, 50px); z-index: 2;">
@@ -56,7 +56,7 @@
                 </div>
             </section>
                 
-                <div id="direction" data-scroll-container>
+                <div id="direction">
                     <div class="c-direction-block_item -two">
                         <span class="c-direction-block_item_inner" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-8" data-scroll-target="#direction">
                             DO NOT CROSS    DEMON INSIDE    DO NOT CROSS    DEMON INSIDE    DO NOT CROSS    DEMON INSIDE    
@@ -83,7 +83,7 @@
                 <h2>Te equivocaste al pasar...</h2>
             </section>
 
-            <section id="huellas" data-scroll-container >
+            <section id="huellas">
                 <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible"> 
                     <img src="img/huella.png" alt="huellas" class="huella">
                 </div>
@@ -109,7 +109,7 @@
             </section>
 
             <section id="linterna">
-                <div id="draggable" class="ui-widget-content"></div>   
+                <div id="draggable" class="ui-widget-content">Usa la linterna, <br>para alumbrar el camino</div>   
                 <div id="droppable" class="ui-widget-header">
                     <div id="droppedImage">
                         <img src="img/nota.png" alt="nota" id="book">
@@ -119,7 +119,7 @@
             </section>
         </section> 
             <!-- Segunda parte --> 
-            <section id="arboles" data-scroll-container>
+            <section id="arboles">
                 <div class="arboles1" data-scroll data-scroll-direction="horizontal" data-scroll-speed="3">
                     <img src="img/ARBOL2.png" alt="árbol 2" class="arbol" style="transform: translate(0px, 50px); z-index: 3;">
                     <img src="img/ARBOL5.png" alt="árbol 5" class="arbol" style="transform: translate(-250px, 50px); z-index: 2;">
@@ -131,7 +131,7 @@
                     <img src="img/ARBOL6.png" alt="árbol 6" class="arbol" style="transform: translate(-300px, 50px); z-index: 1;">
                 </div>
             </section>  
-            <section id="huellas" data-scroll-container>
+            <section id="huellas">
                 <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible"> 
                     <img src="img/huella.png" alt="huellas" class="huella">
                 </div>
@@ -164,7 +164,7 @@
                 </div>
             </section>
             <!-- Tercera parte -->
-            <section id="huellas" data-scroll-container>
+            <section id="huellas">
                 <div class="huella-container" data-scroll data-scroll-repeat data-scroll-class="is-visible"> 
                     <img src="img/huella.png" alt="huellas" class="huella">
                 </div>
@@ -242,6 +242,7 @@
         </div>
         </div>
     </div>
+    
     
         <!-- jQuery UI y archivo JS -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
