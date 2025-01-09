@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const productModalElement = document.getElementById("productModal");
     const closeButton = document.getElementById("closeproduct");
 
-    // ✅ Activar solo si se llega desde la linterna
+    // Activar solo si se llega desde la linterna
     if (localStorage.getItem("playScareVideo") === "true") {
         localStorage.removeItem("playScareVideo");
 
-        // ✅ Mostrar el video y reproducirlo
+        // Mostrar el video y reproducirlo
         torchModal.style.display = "flex";
         gameoverContainer.style.display = "none"; 
         productModalElement.style.display = "none";  
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Error al intentar reproducir el video:", error);
         });
 
-        // ✅ Al finalizar el video, mostrar el mensaje "¡Has muerto!" y modal
+        // Al finalizar el video, mostrar el mensaje "¡Has muerto!" y modal
         torchVideo.onended = () => {
             torchModal.style.display = "none"; 
             gameoverContainer.style.display = "flex"; 
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "index.html";
     }
 
-    // ✅ Cerrar modal y redirigir al enlace externo
+    // Cerrar modal y redirigir al enlace externo
     closeButton?.addEventListener("click", () => {
         window.location.href = "https://gotdem.cargo.site/";
     });
