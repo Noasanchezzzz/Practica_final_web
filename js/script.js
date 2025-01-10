@@ -118,3 +118,7 @@ const torchSwitch = document.getElementById("torch-switch");
             window.location.href = "gameover.html";
         });
     }
+// Redirección al hacer clic en la nota del baño
+document.getElementById('book')?.addEventListener('click', () => {
+    window.location.href = 'https://gotdem.cargo.site/notita-1';
+});
